@@ -1,10 +1,17 @@
 .nupuke{background-color: green;
 color: rgb(211, 211, 211);
 }
+.nupuke{border-radius: 50%;}
 .nupuke:hover {height: 100px;}
 .nupuke:active {cursor: grab;}
+.nupuke{width: min-content;}
 .tekst{color: blue;
 font-style: italic;}
 .tekst:hover {font-size: 24px;}
-.pilt{height: 200px;width: 200px;;}
+.tekst{width: min-content;}
+.pilt{height: 200px;width: 200px;}
 body{background-color: beige;}
+.pilt {float: right;vertical-align: top;}
+
+
+
