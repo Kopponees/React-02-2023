@@ -1,0 +1,71 @@
+.rectangle {
+  height: 7px;
+  width: 60px;
+  background-color: brown;
+  margin: 50px auto;
+}
+.main-picture {
+  height: 300px;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 10px;
+}
+.navigation-pictures {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+.navigation-pictures img {
+  height: 200px;
+  width: 250px;
+  cursor: pointer;
+}
+.navigation-pictures img:hover{
+  scale: 1.1;
+  transition: 0.5s;
+  box-shadow: 50px 50px 13px  black,
+  -50px -50px 13px brown
+}
+.main-link {
+  color:rgb(66, 18, 18);
+  background-color: rgb(55, 55, 55);
+  width: 300px;
+  height: 200px;
+  margin-top:  20px;
+  padding:  20px 0;
+  border-radius:  10px;
+  text-align: center;
+  text-decoration: none;
+  font-family:'Roboto';
+
+}
+body {background-color: rgb(55, 55, 55);}
+.videos {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  padding: 20px 20px;
+ }
+ .facebook-button img {
+  height: 50px;
+  padding: 20px 10px;
+ }
+ .facebook-button span {
+  position:relative;
+  top: -30px;
+  height: 30px;
+  color: white;
+  
+
+ }
+ .facebook-button :hover {
+  color: #7ba9c3;
+  cursor:pointer;
+ }
+
+ .text { 
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: larger;
+  font-weight: bolder;
+ }
