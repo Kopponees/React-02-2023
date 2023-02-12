@@ -1,0 +1,19 @@
+.sepapilt {height: 400px;}
+.sepapilt {position: fixed;
+bottom: 20%;
+right:37%;
+width: 300px;
+border: 3px solid #ffffff;}
+body{background-color: black;}
+.avalehtnupp {background-color: black;color: white;border-color: white;}
+.kontaktnupp {background-color: black;color: white;border-color: white;}
+.meistnupp {background-color: black;color: white;border-color: white;}
+.uudistenupp {background-color: black;color: white;border-color: white;}
+.avalehttekst {position: fixed;
+bottom: 88%;
+right: 34.5%;}
+.avalehttekst {color: white;}
+.kontakttekstid {color: #ffffff;}
+.meisttekstid {color: #ffffff;}
+.uudisedtekstid {color: #ffffff;}
+.ankeetnupp {background-color: black;color: white; border-color: #ffffff;}
