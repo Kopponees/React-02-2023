@@ -17,3 +17,7 @@ right: 34.5%;}
 .meisttekstid {color: #ffffff;}
 .uudisedtekstid {color: #ffffff;}
 .ankeetnupp {background-color: black;color: white; border-color: #ffffff;}
+.vajutatavTekst {font-weight: bolder;}
+.vajutatavTekst{cursor: grab;}
+.emailnupp {cursor: grab;}
+.emailnupp:active {cursor: e-resize;}
