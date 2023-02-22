@@ -9,3 +9,16 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.kollane{
+color: rgb(112, 112, 12)
+}
+
+.roheline{
+color:green
+}
+
+.aktiivne-keel{
+text-decoration: underline;
+background-color: aquamarine;
+}

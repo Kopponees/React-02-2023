@@ -1,11 +1,23 @@
 import React from 'react'
-
+import { useState } from 'react'
+ 
 function Meist() {
+  const[n2itaEmaili, uuendaN2itaEmaili] = useState(false);
+  const[telefon, uuendaTelefon] = useState(localStorage.getItem("telefon") || "");
+  const[aadress, uuendaAadress] = useState(localStorage.getItem("aadress") || "" );
+
   return (
     <div>
-      Meie email: {localStorage.getItem("email")} <br />
-      Meie telefon: {localStorage.getItem("telefon")} <br />
-      Meie aadress: {localStorage.getItem("aadress")} <br />
+      Meie email: {n2itaEmaili === true && localStorage.getItem("email")}
+                  {n2itaEmaili === false && <button onClick={() => uuendaN2itaEmaili(true)}>Näita emaili</button>}
+       <br />
+      Meie telefon: {telefon}
+       { telefon.startsWith("+372") === false && <button onClick={() => uuendaTelefon("+372" + telefon)}>Lisa suunakood</button>}
+       <br />
+      Meie aadress: {aadress}
+      <button onClick={() => uuendaAadress(aadress.toUpperCase())}>Aadress suurteks tähtedeks</button>
+      <button onClick={() => uuendaAadress(aadress.toLowerCase())}>Aadress väikesteks tähtedeks</button>
+       <br />
     </div>
   )
 }
