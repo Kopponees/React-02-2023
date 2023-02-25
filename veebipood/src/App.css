@@ -22,3 +22,18 @@ color:green
 text-decoration: underline;
 background-color: aquamarine;
 }
+
+.dark-mode{
+background-color: black;
+height:  100vh;
+color: white;
+}
+
+.light-mode{
+background-color: blanchedalmond;
+height: 100vh;
+
+}
+.dark-mode button {
+  border:  2px solid green;
+}

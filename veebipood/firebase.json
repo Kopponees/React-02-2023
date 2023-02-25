@@ -1,5 +1,10 @@
 {
+  "database": {
+    "rules": "database.rules.json"
+
+  },
   "hosting": {
+    "site": "projekt123",
     "public": "build",
     "ignore": [
       "firebase.json",
