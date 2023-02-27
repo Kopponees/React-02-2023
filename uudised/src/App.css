@@ -21,3 +21,8 @@ right: 34.5%;}
 .vajutatavTekst{cursor: grab;}
 .emailnupp {cursor: grab;}
 .emailnupp:active {cursor: e-resize;}
+.valitud{
+    font-style: oblique;
+    color: blue;
+    
+}
