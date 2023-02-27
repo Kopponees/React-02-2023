@@ -6,6 +6,7 @@ import LisaToode from './pages/LisaToode';
 import Seaded from './pages/Seaded';
 import Meist from './pages/Meist';
 import {useState} from 'react';
+import Poed from './pages/Poed';
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
    <button className="nupp">Meist</button>
   </Link>
 
+  <Link to="/poed">
+   <button className="nupp">Poed</button>
+  </Link>
+
 {/* <localhost:3000/ */}
 <Routes>
   <Route path="" element={ <Avaleht /> } />
@@ -44,6 +49,7 @@ function App() {
   <Route path="lisa-toode" element={ <LisaToode />} />
   <Route path="seaded" element={ <Seaded /> } />
   <Route path="meist" element={ <Meist /> } />
+  <Route path="poed" element={ <Poed /> } />
 </Routes>
 
     </div>
