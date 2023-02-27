@@ -5,6 +5,7 @@ import Meist from './pages/Meist';
 import Kontakt from './pages/Kontakt';
 import Seaded from './pages/Seaded';
 import {useRef, useState} from 'react';
+import Books from './pages/Books';
 
 function App() {
 const[sisseLogitud, muudaSisseLogitud] = useState("ei");
@@ -51,11 +52,15 @@ const logiValja =() =>{
   <Link to="kontakt">
     <button>Kontakt</button>
   </Link>
+  <Link to="books">
+    <button>Books</button>
+  </Link>
 <Routes>
   <Route path="/" exact element={ <Avaleht />} />
   <Route path="meist" exact element={<Meist />} />
   <Route path="kontakt" exact element={<Kontakt />} />
   <Route path="seaded" exact element={<Seaded />} />
+  <Route path="books" exact element={<Books />} />
   
 </Routes>
  </div>

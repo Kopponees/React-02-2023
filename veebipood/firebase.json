@@ -1,10 +1,9 @@
 {
   "database": {
     "rules": "database.rules.json"
-
   },
   "hosting": {
-    "site": "projekt123",
+    "site" : "veebipood-liis-64c38",
     "public": "build",
     "ignore": [
       "firebase.json",
