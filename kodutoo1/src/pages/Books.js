@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import booksFailist from '../books.json';
 
 function Books() {
 
-    const [books, uuendaBooks] = useState (["The Great Gatsby", "War and Peace", "Hamlet", "Moby Dick", "Come as you are", "High perfomance habits"]);
+    const [books, uuendaBooks] = useState (booksFailist);
  
     const sorteeriEsimeneTahtAZ = () => {
     books.sort((a,b) => a.charAt(0).localeCompare(b.charAt(0)));
@@ -17,7 +18,27 @@ function Books() {
         books.sort((a, b) => b.length - a.length);
         uuendaBooks(books.slice());
     }
-    
+
+    const filtreeriThegaAlgavad = () => {
+const tulem = books.filter(element => element.startsWith("The"));
+uuendaBooks(tulem);
+    }
+
+    const filtreeriKeskelAnd = () => {
+const tulem = books.filter(element => element.includes("and"));
+uuendaBooks(tulem);
+    }
+    const filtreeri10TahemargigaSonad = () => {
+const tulem = books.filter(element => element.length > 10);
+uuendaBooks(tulem);
+    }
+    const filtreeriAlla7Tahemargiga = () => {
+        const tulem = books.filter(element => element.length < 7);
+        uuendaBooks(tulem);
+    }
+    const originaaliTagasi = () => {
+        uuendaBooks(booksFailist);
+    }
 
     return (
     <div>
@@ -25,6 +46,12 @@ function Books() {
          <button onClick={sorteeriEsimeneTahtAZ}>Sorteeri esimese tähe järgi</button>
          <button onClick={sorteeriZA}>Sorteeri Z-A</button>
          <button onClick={sorteeriPikemadEtte}>Sorteeri pikemad sõnad ette</button>
+         <br />
+         <button onClick={filtreeriThegaAlgavad}>Jäta alles "The" ga algavad</button>
+         <button onClick={filtreeriKeskelAnd}>Jäta alles "and" ga elemendid</button>
+         <button onClick={filtreeri10TahemargigaSonad}>Jäta alles üle 10 tähelised</button>
+         <button onClick={filtreeriAlla7Tahemargiga}>Jäta alles alla 7 tähelised</button>
+         <button onClick ={originaaliTagasi}>Originaali tagasi</button>
          {books.map(element => <div>{element}</div> )}
        
     </div>
