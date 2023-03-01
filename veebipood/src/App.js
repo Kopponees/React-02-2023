@@ -7,6 +7,11 @@ import Seaded from './pages/Seaded';
 import Meist from './pages/Meist';
 import {useState} from 'react';
 import Poed from './pages/Poed';
+import Tooted from './pages/Tooted';
+import HaldaTooted from './pages/HaldaTooted';
+import MuudaToode from './pages/MuudaToode';
+import YksikToode from './pages/YksikToode';
+
 
 
 function App() {
@@ -42,6 +47,14 @@ function App() {
    <button className="nupp">Poed</button>
   </Link>
 
+  <Link to="/tooted">
+   <button className="nupp">Tooted</button>
+  </Link>
+
+  <Link to="/halda-tooted">
+   <button className="nupp">Halda tooted</button>
+  </Link>
+
 {/* <localhost:3000/ */}
 <Routes>
   <Route path="" element={ <Avaleht /> } />
@@ -50,6 +63,10 @@ function App() {
   <Route path="seaded" element={ <Seaded /> } />
   <Route path="meist" element={ <Meist /> } />
   <Route path="poed" element={ <Poed /> } />
+  <Route path="tooted" element={ <Tooted /> } />
+  <Route path="halda-tooted" element={ <HaldaTooted /> } />
+  <Route path="toode/:jrkNr" element={ <YksikToode /> } />
+  <Route path="muuda/:index" element={ <MuudaToode /> } />
 </Routes>
 
     </div>

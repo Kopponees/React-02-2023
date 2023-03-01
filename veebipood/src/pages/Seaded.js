@@ -1,4 +1,5 @@
 import React, { useRef, useState} from'react'
+import { ToastContainer, toast } from 'react-toastify';
 
 function Seaded() {
     const [keel, uuendaKeel] = useState(localStorage.getItem("keel") || "est");
@@ -21,12 +22,27 @@ function Seaded() {
 
         const salvestaEmail = () => {
             localStorage.setItem("email", emailViide.current.value);
+            if (emailViide.current.value.includes("@")) {
+           toast.success("E-mail salvestatud"); 
+        } else {toast.error("E-mail ei ole korrektne");
+    }
         }
         const salvestaTelefon = () => {
             localStorage.setItem("telefon", telefonViide.current.value);
+            if (/^\d+$/.test(telefonViide.current.value)) {
+                toast.success("Telefon salvestatud!")
+            } else {
+                toast.error("Telefon ei ole ainult numbritest koosnev!")
+            }
+            ;
         }
         const salvestaAadress = () => {
             localStorage.setItem("aadress", aadressViide.current.value);
+            if (aadressViide.current.value[0] === aadressViide.current.value.charAt(0).toUpperCase(0)){
+                toast.success("Aadress salvestatud");
+            } else {
+                toast.error("Aadress ei ole salvestatud")
+            }
         }
 
   return (
@@ -50,7 +66,11 @@ function Seaded() {
         {keel === "eng" && <div>Page is in english</div>}
         {keel === "rus" && <div> Ctraniza na Russkom jasõke</div>}
         
-       
+        <ToastContainer 
+        position="bottom-right"
+        theme="dark"
+        />
+
     </div>
   )
 }
