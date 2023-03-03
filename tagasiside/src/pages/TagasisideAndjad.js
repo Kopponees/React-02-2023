@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import nimedFailist from '../nimed.json';
+import {useRef} from 'react';
 
 function TagasisideAndjad() {
     const [tagasisideAndjad, muudaTagasisideAndjad] = useState(nimedFailist);
@@ -31,6 +32,18 @@ const asendaESTNimeEtte = () => {
     const tulem= tagasisideAndjad.map(element=>"EST" + element);
     muudaTagasisideAndjad(tulem);}
 
+
+const andjadRef = useRef();
+
+const lisa = () => {
+    tagasisideAndjad.push(andjadRef.current.value);
+    muudaTagasisideAndjad(tagasisideAndjad.slice());
+    }
+
+   
+   
+
+
   return (
     <div>
         <div>
@@ -49,8 +62,12 @@ const asendaESTNimeEtte = () => {
             <button onClick={() => kustuta(index)}>X</button>
         </div>)}
  {tagasisideAndjad.map(element => <div key={element}>{element}</div>)}
+   
+    <label>Uus nimi kõige lõppu</label> <br />
+    <input ref={andjadRef} type="text" /> <br />
+    <button onClick={lisa}>Lisa nimi</button>
     </div>
   )
 }
 
-export default TagasisideAndjad
+export default TagasisideAndjad;
