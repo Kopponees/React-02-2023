@@ -6,6 +6,11 @@ function Array() {
 
     const[muutuja, muudaMuutujat] = useState(muutujadFailist);
 
+    const lisaMuutujad = () => {
+        const uuedMuutujad = ['chickens', 'cats', 'dogs'];
+        muudaMuutujat([...muutuja, ...uuedMuutujad]);
+      };
+
    
 
     
@@ -37,6 +42,7 @@ function Array() {
         <br />
         <button onClick={sorteeriAZ}>sorteeri A-Z</button>
         <button onClick={filtreeriRohkemKui4Tahelised}>Jäta alles üle 4 tähelised</button>
+        <button onClick={lisaMuutujad}>Lisa 3 elementi</button>
         <div>{muutuja.length} tk</div> 
 
 
