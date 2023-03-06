@@ -9,7 +9,12 @@ function YksikToode() {
   return (
     <div>
         {jrkNr}
-        {leitud}
+        {leitud === undefined && <div>Toodet ei leitud!</div>}
+       {leitud !== undefined && <div>
+        <div>{leitud.nimi}</div>
+         <div>{leitud.hind}000€</div>
+          <img src={leitud.pilt} alt="" />
+       </div>}
     </div>
   )
 }

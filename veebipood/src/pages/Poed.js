@@ -10,48 +10,48 @@ function Poed() {
 
     const sorteeriAZ= () => {
        // poed.sort();
-        poed.sort((a, b) => a.localeCompare(b));
+        poed.sort((a, b) => a.nimi.localeCompare(b.nimi));
         uuendaPoed(poed.slice());
     }
 
         const sorteeriZA= () => {
-            poed.sort((a, b)=> b.localeCompare(a));
+            poed.sort((a, b)=> b.nimi.localeCompare(a.nimi));
             uuendaPoed(poed.slice());
     }
         const sorteeriTahedKasvavalt = () => {
-            poed.sort((a, b) => a.length - b.length); // sõna pikkuse järgi järjestatud(lühemast pikemaks)
+            poed.sort((a, b) => a.nimi.length - b.nimi.length); // sõna pikkuse järgi järjestatud(lühemast pikemaks)
             uuendaPoed(poed.slice());
         }
 
         const sorteeriTahedKahanevalt = () => {
-            poed.sort((a, b) =>  b.length - a.length); // sõna pikkuse järgi(pikemast lühemaks)
+            poed.sort((a, b) =>  b.nimi.length - a.nimi.length); // sõna pikkuse järgi(pikemast lühemaks)
             uuendaPoed(poed.slice());
         }
 
         const sorteeriKolmasTahtAZ = () => {
-            poed.sort((a, b) => a.charAt(2).localeCompare(b.charAt(2)));
+            poed.sort((a, b) => a.nimi.charAt(2).localeCompare(b.nimi.charAt(2)));
             uuendaPoed(poed.slice());
         }
 
         const filtreeriEgaLoppevad = () => {
-           const tulem =  poed.filter(yksPood => yksPood.endsWith("e"));
+           const tulem =  poed.filter(yksPood => yksPood.nimi.endsWith("e"));
             uuendaPoed(tulem);
         }
 
         const filtreeriRohkemtahtiKui7 = () => {
-            const tulem =  poed.filter(yksPood => yksPood.length > 7);
+            const tulem =  poed.filter(yksPood => yksPood.nimi.length > 7);
              uuendaPoed(tulem);
         }
         const filtreeriSisaldabTahtiIS = () => {
-            const tulem =  poed.filter(yksPood => yksPood.includes("is"));
+            const tulem =  poed.filter(yksPood => yksPood.nimi.includes("is"));
              uuendaPoed(tulem);
         }
         const filtreeriKolmasTahtI = () => {
-            const tulem =  poed.filter(yksPood => yksPood.charAt(2) ==="i");
+            const tulem =  poed.filter(yksPood => yksPood.nimi.charAt(2) ==="i");
              uuendaPoed(tulem);
         }
         const filtreeriTahti9 = () => {
-            const tulem =  poed.filter(yksPood => yksPood.length === 9);
+            const tulem =  poed.filter(yksPood => yksPood.nimi.length === 9);
              uuendaPoed(tulem);
         }
 
@@ -60,23 +60,23 @@ function Poed() {
 
 
         const asendaSuurteks = () => {
-            const tulem = poed.map(yksPood => yksPood.toUpperCase());
+            const tulem = poed.map(yksPood => {return{"nimi":yksPood.nimi.toUpperCase(), "tel": yksPood.tel}});
             uuendaPoed(tulem);
         }
         const asendaVaikesteks = () => {
-             const tulem = poed.map(yksPood => yksPood.toLowerCase());
+             const tulem = poed.map(yksPood =>{return{"nimi":yksPood.nimi.toLowerCase(), "tel": yksPood.tel}});
             uuendaPoed(tulem);}
 
         const asendaKriipsudEtte = () => {
-            const tulem= poed.map(yksPood=>"--" + yksPood);
+            const tulem= poed.map(yksPood=>{return{"nimi":"--" + yksPood.nimi, "tel": yksPood.tel}});
             uuendaPoed(tulem);}
     
         const asendaTagurpidi = () => {
-            const tulem= poed.map(yksPood=> yksPood.split("").reverse().join(""));
+            const tulem= poed.map(yksPood=> {return{"nimi": yksPood.nimi.split("").reverse().join(""), "tel": yksPood.tel}});
             uuendaPoed(tulem);    
         }
         const asendaITahtOga= () => {
-            const tulem= poed.map(yksPood => yksPood.replaceAll("i", "o"));
+            const tulem= poed.map(yksPood => {return{"nimi":yksPood.nimi.replaceAll("i", "o"), "tel": yksPood.tel}});
             uuendaPoed(tulem);  
         }
             
@@ -108,7 +108,7 @@ function Poed() {
         <div>{poed.length} tk</div>   
 
 
-        {poed.map(yksPood => <div key={yksPood}>{yksPood}</div> )}
+        {poed.map(yksPood => <div key={yksPood.nimi}>{yksPood.nimi} - {yksPood.tel}</div> )}
         <div>---------------------</div>
         <div>Ülemiste</div>
         <div>Viimsi</div>

@@ -1,1 +1,8 @@
-["Ülemiste", "Viimsi", "Rocca Al Mare", "Magistrali", "Vesse", "Kristiine", "Järveotsa"]
+[{"nimi":"Ülemiste", "tel": "51525354"},
+ {"nimi":"Viimsi","tel": "51525351"},
+    {"nimi":"Rocca Al Mare","tel": "51525352"},
+  {"nimi":"Magistrali","tel": "51525353"},
+   {"nimi":"Vesse","tel": "51525355"},
+   { "nimi":"Kristiine","tel": "51525356"},
+    {"nimi": "Järveotsa","tel": "51525357"}
+]

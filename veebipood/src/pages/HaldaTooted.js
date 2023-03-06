@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import tootedFailist from '../data/tooted.json';
+import {Link} from 'react-router-dom'
 
 function HaldaTooted() {
     const[tooted, uuendaTooted] = useState(tootedFailist);
@@ -14,8 +15,13 @@ function HaldaTooted() {
     <div>
         {tooted.map((el, ix) => 
             <div key={ix}>
-                {el}
+              <img className="pilt"src={el.pilt} alt="" />
+              <div>{el.pilt}</div>
+              <div>{el.nimi}</div>
+              <div>{el.hind} 000€</div>
+              <div>{el.aktiivne}</div>
                 <button onClick={() => kustuta(ix)}>X</button>
+                <Link to={"/muuda/" +ix}><button>Muuda</button></Link>
             </div>)}
     </div>
   )

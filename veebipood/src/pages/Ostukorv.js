@@ -30,8 +30,11 @@ function Ostukorv() {
         <div>
           {ostukorv.map((element, jrkNr) =>
         <div key={jrkNr}>
-          {element} <button onClick={() => kustuta(jrkNr)}>X</button>
-                    <button onClick={() => lisa(element)}>+</button>
+          <img className="pilt" src={element.pilt} alt="" />
+          <div>{element.pilt}</div>
+          <div>{element.hind}</div>
+          <button onClick={() => kustuta(jrkNr)}>X</button>
+          <button onClick={() => lisa(element)}>+</button>
         </div>)}
       </div>
     </div>
