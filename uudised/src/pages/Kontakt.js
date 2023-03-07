@@ -1,6 +1,9 @@
 import React,{useState} from 'react'
 
+
 function Kontakt() {
+  
+
   const [n2itaTelVigala,muudaN2itaTelVigala] = useState(false)
   const [n2itaTelKiri, muudaN2itaTelKiri] = useState(false)
   const [n2itaTelSurva, muudaN2itaTelSurva] = useState(false)

@@ -16,6 +16,7 @@ right: 34.5%;}
 .kontakttekstid {color: #ffffff;}
 .meisttekstid {color: #ffffff;}
 .uudisedtekstid {color: #ffffff;}
+.tegevusednupp {background-color: black;color: white; border-color: #ffffff;}
 .ankeetnupp {background-color: black;color: white; border-color: #ffffff;}
 .vajutatavTekst {font-weight: bolder;}
 .vajutatavTekst{cursor: grab;}
@@ -25,4 +26,11 @@ right: 34.5%;}
     font-style: oblique;
     color: blue;
     
+    
+}
+.kontaktTekst {
+color: #ffffff;
+}
+.tegevused{
+    color: #ffffff;
 }

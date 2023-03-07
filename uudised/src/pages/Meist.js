@@ -1,31 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 
 function Meist() {
-  return (
-    <div className="meisttekstid">
-        <div>Eesti Seppade Ühendus aastast 1989</div>
-        <br />
-        <div>Meie eesmärk on edendada Eestis sepatööd! Meie ühendusse on oodatud kõik Eesti sepad, et koos liikuda parema tuleviku poole!
-        </div>
-        <div>Oleme aidanud koostada kolmes koolis sepaeriala õppekava ja tegutseme igapäevaselt selle nimel, et Eesti käsitöö oleks hinnatud üle maailma.</div>
-        <div>Iga aastaselt korraldame ka seppade suvepäevi, mille raames on alati ka erialased koolitused.</div>
-        <div>Meiega on liitunud juba üle 200 sepa</div>
-        <div>Liitu ka sina!</div>
-        <br />
-        <div>Kui soovite meiega liituda siis täitke ankeet <button className="ankeetnupp">Siin</button></div>
-        <br />
-        <div>Kui soovite rohkem infot meie tegemiste kohta, siis võtke julgesti ühendust!</div>
-    
-        <br /> 
-        <div>Meie tegemistest sotsiaalmeedias:</div>
-        <div>Instagramm @eestisepad</div>
-        <div>facebook Eesti Sepad</div>
-        <div>twitter @eestisepad</div>
-        <div>Pinterest @eestisepad</div>
-        <div>TikTok @eestisepad</div>
+const [kontakt, n2itaKontakt] = useState("");
+const tootajad = [
+  {nimi: "Arvo Pärt", ala: "Uudisklippide taustamuusika", telefon:"+37256575859"},
+  {nimi:"Sanna Kalevala", ala:"Spordiuudiste loovjuht", telefon:"+37254535251"},
+  {nimi:"Leila Matveia", ala:"Koristaja", telefon:"+37259585756"},
+  {nimi:"Oskar Koll", ala:"Sekretär-Asjaajaja", telefon:"+37251525354"}
+]
 
-    </div>
-  )
+
+  return ( <div className="kontaktTekst">
+<div>See on meist leht!</div>
+<div>Meie töötajad:</div>
+<br />
+<div>{tootajad.map(tootaja =>
+  <div>
+    <div>{tootaja.nimi}</div>
+    <div>{tootaja.ala}</div>
+    <button onClick={() => n2itaKontakt(tootaja.telefon)}>Võta ühendust!</button>
+    <br /><br />
+  </div>)}
+  </div>
+  {kontakt !== "" && <div>Tema kontakt: {kontakt}</div>}
+</div>);
 }
 
 export default Meist
