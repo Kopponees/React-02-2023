@@ -6,6 +6,9 @@ import {useNavigate} from 'react-router-dom';
 
 function MuudaToode() {
   const nimiRef = useRef();
+  const hindRef = useRef();
+  const aktiivneRef = useRef();
+  const piltRef = useRef();
   const { index } = useParams();// UseParams on reacti hook,nagu useState või ref
   //mida ei eksisteeri tavalises javascriptis. mingisugune imporditav funktsionaalsus node_modulest.
   //useSuperpower(koodilühendus)
@@ -15,7 +18,12 @@ function MuudaToode() {
   const navigate = useNavigate();
 
   const muuda = () => {
-    tootedFailist[index] = nimiRef.current.value;
+    tootedFailist[index] = {
+      "nimi":nimiRef.current.value,
+      "hind":Number(hindRef.current.value),
+      "pilt":piltRef.current.value,
+      "aktiivne":aktiivneRef.current.checked
+    };
     navigate("/halda-tooted"); //tegemist on täpselt sama asjaga nagu <Link>
     //mõlemad vahetavad URL-i
     //kui URL-i vahetuseda teen ka mingi koodilõigu(praegusel juhul muudan toodet)
@@ -29,9 +37,17 @@ function MuudaToode() {
   
   return (
     <div>
-     {leitud !== undefined && <div> <label>Toote nimi</label> <br />
-      <input ref= {nimiRef} type="text" autoFocus defaultValue={leitud}/> <br />
+     {leitud !== undefined && <div>
+      <label>Toote nimi</label> <br />
+      <input ref= {nimiRef} type="text" autoFocus defaultValue={leitud.nimi}/> <br />
       <button onClick={muuda}>Sisesta</button> <br />
+      <input ref= {hindRef} type="number" defaultValue={leitud.hind}/> <br />
+      <button onClick={muuda}>Sisesta</button> <br />
+      <input ref= {piltRef} type="text" defaultValue={leitud.pilt}/> <br />
+      <button onClick={muuda}>Sisesta</button> <br />
+      <input ref= {aktiivneRef} type="checkbox"defaultChecked={leitud.aktiivne}/> <br />
+      <button onClick={muuda}>Sisesta</button> <br />
+      
     </div>}
 
       {leitud === undefined && <div>Toodet ei leitud</div>}

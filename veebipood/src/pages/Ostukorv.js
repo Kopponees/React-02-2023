@@ -22,6 +22,12 @@ function Ostukorv() {
     uuendaOstukorv([]);
   }
 
+  const arvutaKogusumma = () => {
+    let kogusumma = 0; // const tüüpi muutujaid rohkem muuta ei saa, let tüüpi saab lõpmatuseni muuta
+    ostukorvFailist.forEach(yksToode => kogusumma= kogusumma +  yksToode.hind);
+    return kogusumma;        // väljastan kogusumma htmli
+  }
+
   return (
     <div>
       { ostukorv.length > 0 && <button onClick={tyhjenda}>Tühjenda</button>}
@@ -32,11 +38,12 @@ function Ostukorv() {
         <div key={jrkNr}>
           <img className="pilt" src={element.pilt} alt="" />
           <div>{element.pilt}</div>
-          <div>{element.hind}</div>
+          <div>{element.hind} 000€</div>
           <button onClick={() => kustuta(jrkNr)}>X</button>
           <button onClick={() => lisa(element)}>+</button>
         </div>)}
       </div>
+      {ostukorv.length > 0 && <div>Summa kokku: {arvutaKogusumma()} €</div>}
     </div>
   )
 }

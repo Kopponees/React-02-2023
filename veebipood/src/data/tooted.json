@@ -1,5 +1,7 @@
 [
  {"nimi":"Nobe","hind": 67, "aktiivne": true, "pilt":"https://nobecars.com/wp-content/uploads/2022/01/Untitled-2-5-1024x473.png"},
  {"nimi":"Tesla", "hind": 87, "aktiivne": true, "pilt":"https://www.pngmart.com/files/4/Tesla-PNG-Transparent-420x174.png"},
- {"nimi":"BMW", "hind": 98, "aktiivne": true, "pilt":"https://www.pngall.com/wp-content/uploads/2016/04/BMW-PNG-Clipart.png"}
+ {"nimi":"BMW", "hind": 98, "aktiivne": true, "pilt":"https://www.pngall.com/wp-content/uploads/2016/04/BMW-PNG-Clipart.png"},
+ {"nimi":"Audi", "hind": 955, "aktiivne": true, "pilt": ""},
+ {"nimi":"Opel", "hind": 55, "aktiivne": true, "pilt":""}
 ]
