@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import productsFromFile from '../../data/products.json';
+import cartFile from '../../data/cart.json';
 
 function HomePage() {
-const [products, setProducts] = useState(productsFromFile);
+const [products] = useState(productsFromFile);
 
+const addToCart = (clickedProduct) => {
+cartFile.push(clickedProduct);
+}
 
 
   return (
@@ -18,7 +22,7 @@ const [products, setProducts] = useState(productsFromFile);
         <div>{element.category}</div>
         <div>{element.description}</div>
         <div>{element.active}</div>
-        <button>Add to cart</button>
+        <button onClick={() =>addToCart(element)}>Add to cart</button>
        </div>
        )}
     </div>
