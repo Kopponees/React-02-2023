@@ -34,3 +34,15 @@ color: #ffffff;
 .tegevused{
     color: #ffffff;
 }
+.lang{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+.lang:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.lang:active {
+    padding:1px;
+}

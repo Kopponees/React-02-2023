@@ -38,8 +38,7 @@ function App() {
             <Nav.Link as={Link} to="/contact">{t("contact")}</Nav.Link>
             <Nav.Link as={Link} to="/shops">{t("shops")}</Nav.Link>
           </Nav>
-          <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")}/>
-          <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")}/>
+          
         
         </Container>
       </Navbar>
@@ -56,6 +55,8 @@ function App() {
       <Route path="admin/maintain-shops" element= {<MaintainShops /> } />
       <Route path="admin/maintain-categories" element= {<MaintainCategories /> } />
      </Routes>
+          <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")}/>
+          <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")}/>
     </div>
   );
 }
