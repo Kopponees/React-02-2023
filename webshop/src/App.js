@@ -3,7 +3,7 @@ import { Link, Route, Routes} from 'react-router-dom';
 import HomePage from './pages/public/HomePage';
 import Cart from './pages/public/Cart';
 import Shops from './pages/public/Shops';
-import ContactUs from './pages/public/ContactUs';
+import {ContactUs} from './pages/public/ContactUs';
 import AdminHome from './pages/admin/AdminHome';
 import AddProducts from './pages/admin/AddProducts';
 import EditProducts from './pages/admin/EditProducts';
@@ -51,7 +51,7 @@ function App() {
       <Route path="contact" element= {<ContactUs /> } />
       <Route path="admin" element= {<AdminHome /> } />
       <Route path="admin/add-product" element= {<AddProducts /> } />
-      <Route path="admin/edit-product" element= {<EditProducts /> } />
+      <Route path="admin/edit-product/:id" element= {<EditProducts /> } />
       <Route path="admin/maintain-products" element= {<MaintainProducts /> } />
       <Route path="admin/maintain-shops" element= {<MaintainShops /> } />
       <Route path="admin/maintain-categories" element= {<MaintainCategories /> } />

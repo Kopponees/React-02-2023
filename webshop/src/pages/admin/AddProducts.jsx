@@ -20,10 +20,12 @@ function AddProducts() {
     } else {
       setMessage("Product added!" + nameRef.current.value);
     products.push({
-      "id":idRef.current.value,
+      "id":Number(idRef.current.value),
       "name":nameRef.current.value,
       "image":imageRef.current.value,
       "price":Number(priceRef.current.value),
+      "category":categoryRef.current.value,
+      "description":descriptionRef.current.value,
       "active":activeRef.current.checked,
     });
     nameRef.current.value = "";
@@ -34,7 +36,7 @@ function AddProducts() {
     <div>
       {message} <br />
        <label>Product id</label> <br />
-      <input ref={idRef} type="text" /> <br />
+      <input ref={idRef} type="number" /> <br />
       <label>New product name</label> <br />
       <input ref={nameRef} type="text" /> <br />
       <label>Image</label> <br />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import productsFromFile from '../../data/products.json';
 import cartFile from '../../data/cart.json';
+import Button from '@mui/material/Button';
 
 function HomePage() {
 const [products] = useState(productsFromFile);
@@ -22,7 +23,7 @@ cartFile.push(clickedProduct);
         <div>{element.category}</div>
         <div>{element.description}</div>
         <div>{element.active}</div>
-        <button onClick={() =>addToCart(element)}>Add to cart</button>
+        <Button variant="contained" onClick={() =>addToCart(element)}>Add to cart</Button>
        </div>
        )}
     </div>
