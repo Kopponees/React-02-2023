@@ -7,8 +7,10 @@ function MaintainProducts() {
 const [products, setProducts] = useState(productsFromFile);
 const searchRef = useRef();
 
-const deleteProduct = () => {
-//Kodus kustutamine
+
+const deleteProduct = (index) => {
+products.splice(index,1);
+setProducts(products.slice());
 }
 
 const searchFromProducts = () => {

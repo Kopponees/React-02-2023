@@ -29,14 +29,22 @@ function AddProducts() {
       "active":activeRef.current.checked,
     });
     nameRef.current.value = "";
-    }
+}
+ }
+ const checkIdUniqueness = () => {
+  const found = productsFromFile.find(element => element.id === Number(idRef.current.value));
+  if (found === undefined) {
+    setMessage("");
+  } else {
+    setMessage("ID is not unique!");
   }
+}
 
   return (
     <div>
       {message} <br />
        <label>Product id</label> <br />
-      <input ref={idRef} type="number" /> <br />
+      <input onChange={checkIdUniqueness} ref={idRef} defaultValue={products.id} type="number" /> <br />
       <label>New product name</label> <br />
       <input ref={nameRef} type="text" /> <br />
       <label>Image</label> <br />
