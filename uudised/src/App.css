@@ -25,6 +25,7 @@ right: 34.5%;}
 .valitud{
     font-style: oblique;
     color: blue;
+
     
     
 }
@@ -45,4 +46,13 @@ color: #ffffff;
 }
 .lang:active {
     padding:1px;
+}
+.Valitud {
+    font-weight: bold;
+    color: blue;
+}
+
+.buttonMeist :hover{
+cursor: pointer;
+
 }
