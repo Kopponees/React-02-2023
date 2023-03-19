@@ -10,6 +10,7 @@ import EditProducts from './pages/admin/EditProducts';
 import MaintainProducts from './pages/admin/MaintainProducts';
 import MaintainShops from './pages/admin/MaintainShops';
 import MaintainCategories from './pages/admin/MaintainCategories';
+import SingleProduct from './pages/admin/SingleProduct';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -55,6 +56,7 @@ function App() {
       <Route path="admin/maintain-products" element= {<MaintainProducts /> } />
       <Route path="admin/maintain-shops" element= {<MaintainShops /> } />
       <Route path="admin/maintain-categories" element= {<MaintainCategories /> } />
+      <Route path="admin/single-product" element= {<SingleProduct /> } />
      </Routes>
           
     </div>
