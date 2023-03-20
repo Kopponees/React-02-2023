@@ -9,8 +9,8 @@ const searchRef = useRef();
 
 
 const deleteProduct = (index) => {
-products.splice(index,1);
-setProducts(products.slice());
+productsFromFile.splice(index,1);
+setProducts(productsFromFile.slice());
 }
 
 const searchFromProducts = () => {

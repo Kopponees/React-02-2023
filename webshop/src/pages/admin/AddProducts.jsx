@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useRef} from 'react';
 import productsFromFile from '../../data/products.json';
+import categoriesFromFile from '../../data/categories.json';
 
 function AddProducts() {
   const [products] = useState(productsFromFile);
@@ -44,20 +45,22 @@ function AddProducts() {
     <div>
       {message} <br />
        <label>Product id</label> <br />
-      <input onChange={checkIdUniqueness} ref={idRef} defaultValue={products.id} type="number" /> <br />
-      <label>New product name</label> <br />
+      <input onChange={checkIdUniqueness} ref={idRef} type="number" /> <br />
+      <label>New product name:</label> <br />
       <input ref={nameRef} type="text" /> <br />
-      <label>Image</label> <br />
+      <label>New products image:</label> <br />
       <input ref={imageRef} type="text" /> <br />
-      <label>Price</label> <br />
+      <label>new products price:</label> <br />
       <input ref={priceRef} type="number" /> <br />
-      <label>Category</label> <br />
-      <input ref={categoryRef} type="text" /> <br />
-      <label>Description</label> <br />
+      <label>new products category:</label> <br />
+      <select ref={categoryRef}>
+        {categoriesFromFile.map(element => <option>{element}</option>)}
+      </select> <br />
+      <label>New products description:</label> <br />
       <input ref={descriptionRef} type="text" /> <br />
-      <label>Active</label> <br />
+      <label>New products active?</label> <br />
       <input ref={activeRef} type="checkbox" /> <br />
-      <button onClick={add}>Enter</button>
+      <button disabled={message === "ID is not unique"} onClick={add}>Enter</button> <br />
     </div>
   )
 }

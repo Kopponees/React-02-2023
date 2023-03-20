@@ -21,7 +21,7 @@ function App() {
 
   const updateLang = (newLang) => {
     i18n.changeLanguage(newLang);
-    localStorage.setitem("language",newLang);
+    localStorage.setItem("language",newLang);
   }
   
   
@@ -56,7 +56,7 @@ function App() {
       <Route path="admin/maintain-products" element= {<MaintainProducts /> } />
       <Route path="admin/maintain-shops" element= {<MaintainShops /> } />
       <Route path="admin/maintain-categories" element= {<MaintainCategories /> } />
-      <Route path="admin/single-product" element= {<SingleProduct /> } />
+      <Route path="product/:id" element= {<SingleProduct /> } />
      </Routes>
           
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import {useRef, useState} from 'react';
 import {useNavigate,useParams} from 'react-router-dom';
 import ProductsFromFile from '../../data/products.json';
+import categoriesFromFile from '../../data/categories.json';
 
 
 function EditProducts() {
@@ -56,7 +57,9 @@ function EditProducts() {
       <label>Product's price</label> <br />
       <input ref={priceRef} defaultValue={product.price} type="number" /> <br />
       <label>Product's category</label> <br />
-      <input ref={categoryRef} defaultValue={product.category} type="text" /> <br />
+      <select ref={categoryRef} defaultValue={product.category}>
+        {categoriesFromFile.map(element => <option>{element}</option>)}
+      </select> <br />
       <label>Product's description</label> <br />
       <input ref={descriptionRef} defaultValue={product.description} type="text" /> <br />
       <label>Product's active</label> <br />
