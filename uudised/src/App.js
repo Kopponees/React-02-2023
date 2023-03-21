@@ -9,6 +9,7 @@ import Tegevused from './pages/Tegevused';
 import { useTranslation } from 'react-i18next';
 import Alert from 'react-bootstrap/Alert';
 import LisaUudis from './pages/LisaUudis';
+import HaldaUudiseid from './pages/HaldaUudiseid';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
       <Link to='/lisa-uudis'>
         <button className="lisauudisnupp">{t("Lisa uudis")}</button>
       </Link>
+      <Link to='/halda-uudiseid'>
+        <button className="haldauudiseidnupp">{t("Halda uudiseid")}</button>
+      </Link>
       
       
       <Routes>
@@ -51,6 +55,7 @@ function App() {
         <Route path='meist' element={ <Meist /> }  />
         <Route path='tegevused' element={ <Tegevused /> }  />
         <Route path='lisa-uudis' element={ <LisaUudis /> }  />
+        <Route path='halda-uudiseid' element={ <HaldaUudiseid /> }  />
             </Routes>
             <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")}/>
           <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")}/>

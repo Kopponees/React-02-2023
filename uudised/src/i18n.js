@@ -12,7 +12,8 @@ const resources = {
       "Võta meiega ühendust":"Contact us",
       "Info meist":"About us",
       "Ülesanded":"Assignments",
-      "Lisa uudis": "Add news"
+      "Lisa uudis": "Add news",
+      "Halda uudiseid":"Manage news",
 
     }
   },
@@ -23,7 +24,8 @@ const resources = {
       "Võta meiega ühendust":"Kontakt",
       "Info meist":"Meist",
       "Ülesanded":"Ülesanded",
-      "lisa uudis":"Lisa uudis"
+      "lisa uudis":"Lisa uudis",
+      "Halda uudiseid":"Halda uudiseid",
     }
   },
   ru: {
@@ -33,7 +35,8 @@ const resources = {
         "Võta meiega ühendust":"Контакт",
         "Info meist":"О нас",
         "Ülesanded":"Назначения",
-        "Lisa uudis":"Добавить новости"
+        "Lisa uudis":"Добавить новости",
+        "Halda uudiseid":"Управление новостями",
     }
   }
 };
