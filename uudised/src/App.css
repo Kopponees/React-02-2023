@@ -9,6 +9,7 @@ body{background-color: black;}
 .kontaktnupp {background-color: black;color: white;border-color: white;}
 .meistnupp {background-color: black;color: white;border-color: white;}
 .uudistenupp {background-color: black;color: white;border-color: white;}
+.lisauudisnupp {background-color: black;color: white;border-color: white;}
 .avalehttekst {position: fixed;
 bottom: 88%;
 right: 34.5%;}
@@ -55,4 +56,7 @@ color: #ffffff;
 .buttonMeist :hover{
 cursor: pointer;
 
+}
+.uudisenimitekst{
+    color: #ffffff;
 }

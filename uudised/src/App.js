@@ -8,6 +8,7 @@ import Meist from './pages/Meist';
 import Tegevused from './pages/Tegevused';
 import { useTranslation } from 'react-i18next';
 import Alert from 'react-bootstrap/Alert';
+import LisaUudis from './pages/LisaUudis';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   
     const updateLang = (newLang) => {
       i18n.changeLanguage(newLang);
-      localStorage.setitem("language",newLang);
+      localStorage.setItem("language",newLang);
     }
 
   return (
@@ -38,6 +39,9 @@ function App() {
       <Link to='/tegevused'>
         <button className="tegevusednupp">{t("Ülesanded")}</button>
       </Link>
+      <Link to='/lisa-uudis'>
+        <button className="lisauudisnupp">{t("Lisa uudis")}</button>
+      </Link>
       
       
       <Routes>
@@ -46,6 +50,7 @@ function App() {
         <Route path='kontakt' element={ <Kontakt />}  />
         <Route path='meist' element={ <Meist /> }  />
         <Route path='tegevused' element={ <Tegevused /> }  />
+        <Route path='lisa-uudis' element={ <LisaUudis /> }  />
             </Routes>
             <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")}/>
           <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")}/>
