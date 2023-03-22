@@ -32,7 +32,7 @@ function App() {
 
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/">WebShop</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">My webshop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/admin" >{t("admin")}</Nav.Link>
             <Nav.Link as={Link} to="/cart">{t("cart")}</Nav.Link>
