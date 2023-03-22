@@ -1,63 +1,150 @@
-.sepapilt {height: 400px;}
-.sepapilt {position: fixed;
-bottom: 20%;
-right:37%;
-width: 300px;
-border: 3px solid #ffffff;}
-body{background-color: black;}
-.avalehtnupp {background-color: black;color: white;border-color: white;}
-.kontaktnupp {background-color: black;color: white;border-color: white;}
-.meistnupp {background-color: black;color: white;border-color: white;}
-.uudistenupp {background-color: black;color: white;border-color: white;}
-.lisauudisnupp {background-color: black;color: white;border-color: white;}
-.avalehttekst {position: fixed;
-bottom: 88%;
-right: 34.5%;}
-.avalehttekst {color: white;}
-.kontakttekstid {color: #ffffff;}
-.meisttekstid {color: #ffffff;}
-.uudisedtekstid {color: #ffffff;}
-.tegevusednupp {background-color: black;color: white; border-color: #ffffff;}
-.ankeetnupp {background-color: black;color: white; border-color: #ffffff;}
-.haldauudiseidnupp { background-color: black;color: white; border-color: #ffffff;}
-.vajutatavTekst {font-weight: bolder;}
-.vajutatavTekst{cursor: grab;}
-.emailnupp {cursor: grab;}
-.emailnupp:active {cursor: e-resize;}
-.valitud{
+.sepapilt {
+    height: 400px;
+}
+
+.sepapilt {
+    position: fixed;
+    bottom: 20%;
+    right: 37%;
+    width: 300px;
+    border: 3px solid #ffffff;
+}
+
+body {
+    background-color: black;
+}
+
+.avalehtnupp {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.kontaktnupp {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.meistnupp {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.uudistenupp {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.lisauudisnupp {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.avalehttekst {
+    position: fixed;
+    bottom: 88%;
+    right: 34.5%;
+}
+
+.avalehttekst {
+    color: white;
+}
+
+.kontakttekstid {
+    color: #ffffff;
+}
+
+.meisttekstid {
+    color: #ffffff;
+}
+
+.uudisedtekstid {
+    color: #ffffff;
+}
+
+.tegevusednupp {
+    background-color: black;
+    color: white;
+    border-color: #ffffff;
+}
+
+.ankeetnupp {
+    background-color: black;
+    color: white;
+    border-color: #ffffff;
+}
+
+.haldauudiseidnupp {
+    background-color: black;
+    color: white;
+    border-color: #ffffff;
+}
+
+.vajutatavTekst {
+    font-weight: bolder;
+}
+
+.vajutatavTekst {
+    cursor: grab;
+}
+
+.haldauudiseidtekst {
+    color: white;
+}
+
+.emailnupp {
+    cursor: grab;
+}
+
+.emailnupp:active {
+    cursor: e-resize;
+}
+
+.valitud {
     font-style: oblique;
     color: blue;
 
-    
-    
+
+
 }
+
 .kontaktTekst {
-color: #ffffff;
-}
-.tegevused{
     color: #ffffff;
 }
-.lang{
+
+.tegevused {
+    color: #ffffff;
+}
+
+.lang {
     width: 30px;
     height: 30px;
     margin: 5px;
 }
+
 .lang:hover {
     opacity: 0.7;
     cursor: pointer;
 }
+
 .lang:active {
-    padding:1px;
+    padding: 1px;
 }
+
 .Valitud {
     font-weight: bold;
     color: blue;
 }
 
-.buttonMeist :hover{
-cursor: pointer;
+.buttonMeist :hover {
+    cursor: pointer;
 
 }
-.uudisenimitekst{
+
+.uudisenimitekst {
     color: #ffffff;
 }

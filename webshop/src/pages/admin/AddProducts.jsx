@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {useRef} from 'react';
+import React, { useState } from 'react';
+import { useRef } from 'react';
 import productsFromFile from '../../data/products.json';
 import categoriesFromFile from '../../data/categories.json';
 
@@ -16,35 +16,35 @@ function AddProducts() {
   const activeRef = useRef();
 
   const add = () => {
-    if (nameRef.current.value ==="") {
+    if (nameRef.current.value === "") {
       setMessage("A product with an empty name cannot be added");
     } else {
       setMessage("Product added!" + nameRef.current.value);
-    products.push({
-      "id":Number(idRef.current.value),
-      "name":nameRef.current.value,
-      "image":imageRef.current.value,
-      "price":Number(priceRef.current.value),
-      "category":categoryRef.current.value,
-      "description":descriptionRef.current.value,
-      "active":activeRef.current.checked,
-    });
-    nameRef.current.value = "";
-}
- }
- const checkIdUniqueness = () => {
-  const found = productsFromFile.find(element => element.id === Number(idRef.current.value));
-  if (found === undefined) {
-    setMessage("");
-  } else {
-    setMessage("ID is not unique!");
+      products.push({
+        "id": Number(idRef.current.value),
+        "name": nameRef.current.value,
+        "image": imageRef.current.value,
+        "price": Number(priceRef.current.value),
+        "category": categoryRef.current.value,
+        "description": descriptionRef.current.value,
+        "active": activeRef.current.checked,
+      });
+      nameRef.current.value = "";
+    }
   }
-}
+  const checkIdUniqueness = () => {
+    const found = productsFromFile.find(element => element.id === Number(idRef.current.value));
+    if (found === undefined) {
+      setMessage("");
+    } else {
+      setMessage("ID is not unique!");
+    }
+  }
 
   return (
     <div>
       {message} <br />
-       <label>Product id</label> <br />
+      <label>Product id</label> <br />
       <input onChange={checkIdUniqueness} ref={idRef} type="number" /> <br />
       <label>New product name:</label> <br />
       <input ref={nameRef} type="text" /> <br />
