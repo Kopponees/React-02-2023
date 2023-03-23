@@ -44,28 +44,6 @@ body {
     border-color: white;
 }
 
-.avalehttekst {
-    position: fixed;
-    bottom: 88%;
-    right: 34.5%;
-}
-
-.avalehttekst {
-    color: white;
-}
-
-.kontakttekstid {
-    color: #ffffff;
-}
-
-.meisttekstid {
-    color: #ffffff;
-}
-
-.uudisedtekstid {
-    color: #ffffff;
-}
-
 .tegevusednupp {
     background-color: black;
     color: white;
@@ -92,9 +70,6 @@ body {
     cursor: grab;
 }
 
-.haldauudiseidtekst {
-    color: white;
-}
 
 .emailnupp {
     cursor: grab;
@@ -107,17 +82,6 @@ body {
 .valitud {
     font-style: oblique;
     color: blue;
-
-
-
-}
-
-.kontaktTekst {
-    color: #ffffff;
-}
-
-.tegevused {
-    color: #ffffff;
 }
 
 .lang {
@@ -145,6 +109,6 @@ body {
 
 }
 
-.uudisenimitekst {
+body {
     color: #ffffff;
 }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function HaldaUudiseid() {
     const [uudised, muudaUudiseid] = useState(JSON.parse(localStorage.getItem("uudised")) || []);
 
     const kustuta = (index) => {
-        uudised.splice(index,1);
+        uudised.splice(index, 1);
         muudaUudiseid(uudised.slice());
         localStorage.setItem("uudised", JSON.stringify(uudised));
 
@@ -13,11 +14,14 @@ function HaldaUudiseid() {
     return (
         <div>
             <div>{uudised.map((uudis, index) => <div>
-                <div className="haldauudiseidtekst">{uudis}</div>
+                <div>{uudis}</div>
                 <button onClick={() => kustuta(index)}>x</button>
+                <Link to={"/muuda/" + index}>
+                    <button>Muuda</button>
+                    </Link>
             </div>
             )}</div>
-        </div> );
+        </div>);
 }
 
 export default HaldaUudiseid
