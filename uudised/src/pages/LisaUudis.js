@@ -12,7 +12,7 @@ function LisaUudis () {
     
     return ( 
     <div>
-        <label className="uudisenimitekst">Uudise nimi:</label> <br />
+        <label>Uudise nimi:</label> <br />
         <input ref={uudiseRef} type="text" /> <br />
         <button onClick={() => lisaUusUudis()}>Lisa uudis</button> <br />
     </div> );

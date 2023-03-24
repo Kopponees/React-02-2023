@@ -2,6 +2,7 @@ import {Link, Routes, Route} from 'react-router-dom'
 import './App.css';
 import Avaleht from './pages/Avaleht';
 import LisaTegelane from './pages/LisaTegelane';
+import TegelaseLisamine from './pages/TegelaseLisamine';
 import Valitudtegelased from './pages/Valitudtegelased';
 
 function App() {
@@ -11,15 +12,19 @@ function App() {
         <button>Avalehele</button>
       </Link>
       <Link to="lisa-tegelane">
-        <button>Tegelase lisamine</button>
+        <button>Lisa tegelane</button>
       </Link>
       <Link to="vali-tegelane">
-        <button>Tegelase valimine</button>
+        <button>Vali tegelane</button>
+      </Link>
+      <Link to="tegelase-lisamine">
+        <button>Tegelase lisamine</button>
       </Link>
       <Routes>
         <Route path="/" element={<Avaleht />} />
         <Route path="lisa-tegelane" element={<LisaTegelane />} />
         <Route path="vali-tegelane" element={<Valitudtegelased />} />
+        <Route path="tegelase-lisamine" element={<TegelaseLisamine />} />
       </Routes>
     </div>
   );
