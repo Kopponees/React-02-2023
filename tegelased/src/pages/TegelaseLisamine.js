@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 function TegelaseLisamine() {
-    const [tegelased] = useState(JSON.parse(localStorage.getItem("tegelased")) || []);
     const [sonum, uuendaSonum] = useState("Lisa uus tegelane!");
-   
     const eesnimiRef= useRef();
     const perenimiRef= useRef();
     const elukohtRef= useRef();
@@ -14,20 +12,21 @@ function TegelaseLisamine() {
             if (eesnimiRef.current.value === "") {
               uuendaSonum("Tühja nimetusega ei saa lisada");
             } else {
-              uuendaSonum("Tegelane lisatud!" + eesnimiRef.current.value);
+              uuendaSonum("Tegelane lisatud!");
+              const tegelased = JSON.parse(localStorage.getItem("tegelased")) || [];
               tegelased.push({
                 "eesnimi": eesnimiRef.current.value,
                 "perenimi": perenimiRef.current.value,
                 "elukoht": elukohtRef.current.value,
-                "vanus": Number(vanusRef.current.value),
-              });
-              eesnimiRef.current.value = "";
+                "vanus": Number(vanusRef.current.value)
+              })
+              localStorage.setItem("tegelased", JSON.stringify(tegelased));
             }
           }
         
   return (
     <div>
-        {sonum} <br />
+         <div>{sonum}</div> <br />
         <label>Eesnimi:</label>
         <input ref={eesnimiRef}type="text" /> <br />
         <label>Perenimi:</label>

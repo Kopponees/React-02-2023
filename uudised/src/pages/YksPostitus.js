@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 function YksPostitus() {
     const { postituseId } = useParams();
-    const [ postitus, uuendaPostitus ] = useState({});
+    const [postitus, uuendaPostitus] = useState({});
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/posts/" + postituseId)
@@ -21,4 +21,4 @@ function YksPostitus() {
   );
 }
 
-export default YksPostitus
+export default YksPostitus;

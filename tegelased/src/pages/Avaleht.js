@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 
 
 function Avaleht() {
-  const tegelased = [
-    { eesnimi: "Mickey", perenimi: "Mouse", elukoht: "Disneyland", vanus: 25 },
-    { eesnimi: "Minnie", perenimi: "Mouse", elukoht: "Disneyland", vanus: 25 },
-    { eesnimi: "Winnie", perenimi: "Pooh", elukoht: "Hundred Acre Wood", vanus: 20 },
-    { eesnimi: "Roo", perenimi: "Kangaroo", elukoht: "Hundred Acre Wood", vanus: 9 },
-    { eesnimi: "Scooby", perenimi: "Doo", elukoht: "Crystal Cove", vanus: 7 },
-  ];
-
+  // const tegelased = [
+  //   { eesnimi: "Mickey", perenimi: "Mouse", elukoht: "Disneyland", vanus: 25 },
+  //   { eesnimi: "Minnie", perenimi: "Mouse", elukoht: "Disneyland", vanus: 25 },
+  //   { eesnimi: "Winnie", perenimi: "Pooh", elukoht: "Hundred Acre Wood", vanus: 20 },
+  //   { eesnimi: "Roo", perenimi: "Kangaroo", elukoht: "Hundred Acre Wood", vanus: 9 },
+  //   { eesnimi: "Scooby", perenimi: "Doo", elukoht: "Crystal Cove", vanus: 7 },
+  // ];
+  const tegelased = JSON.parse(localStorage.getItem("tegelased")) || [];
   const [klikitudNimi, uuendaKlikitudNimi] = useState("");
 
   const kuvaNimi = (tegelane) => {
