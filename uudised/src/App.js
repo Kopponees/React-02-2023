@@ -12,6 +12,8 @@ import LisaUudis from './pages/LisaUudis';
 import HaldaUudiseid from './pages/HaldaUudiseid';
 import YksUudis from './pages/YksUudis';
 import MuudaUudis from './pages/MuudaUudis';
+import KasutajaPostitus from './pages/KasutajaPostitus';
+import YksPostitus from './pages/YksPostitus';
 
 
 function App() {
@@ -61,6 +63,8 @@ function App() {
         <Route path='halda-uudiseid' element={<HaldaUudiseid />} />
         <Route path='uudis/:index' element={<YksUudis />} />
         <Route path='muuda/:index' element={<MuudaUudis />} />
+        <Route path='kasutaja-postitus/:kasutajaId' element={<KasutajaPostitus />} />
+        <Route path='vaata-postitust/:postituseId' element={<YksPostitus />} />
       </Routes>
       <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")} />
       <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")} />
