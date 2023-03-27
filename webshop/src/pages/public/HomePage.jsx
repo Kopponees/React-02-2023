@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react'
-// import productsFromFile from '../../data/products.json';
-// import cartFile from '../../data/cart.json';
-import categoriesFromFile from '../../data/categories.json';
+import { Link } from 'react-router-dom';
+import config from '../../data/config.json';
 import Button from '@mui/material/Button';
 
 function HomePage() {
+  const [dbProducts, setDbProducts] = useState([]); //veendun, et siin oleks alati andmebaasist(243tk)
   const [products, setProducts] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://webshop-ea72b-default-rtdb.europe-west1.firebasedatabase.app/products.json")
+    fetch(config.categoriesDbUrl)
       .then(res => res.json())
-      .then(json => setProducts(json));
+      .then(json => setCategories(json || []));
+
+    fetch(config.productsDbUrl)
+      .then(res => res.json())
+      .then(json => {
+        setProducts(json || []); // || [] kui sealt tuleb tagastus "null" ehk tühjus
+        setDbProducts(json || []);
+        setLoading(false);
+      });
   }, []);
+
 
   const addToCart = (productClicked) => {
     const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
@@ -32,10 +43,13 @@ function HomePage() {
   }
 
   const filterByCategory = (categoryClicked) => {
-    const result = products.filter(element => element.category === categoryClicked);
+    const result = dbProducts.filter(element => element.category === categoryClicked);
     setProducts(result);
   }
 
+  if (isLoading === true) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div>
@@ -43,18 +57,23 @@ function HomePage() {
       <button onClick={() => filterByCategory("tent")}>tents</button>
       <button onClick={() => filterByCategory("camping")}>camping</button>
       <button onClick={() => filterByCategory("jeans")}>jeans</button> */}
-      {categoriesFromFile.map(element => <button key={element} onClick={() => filterByCategory(element)}>{element}</button>)}
+      {categories.map(element =>
+        <button key={element.name} onClick={() => filterByCategory(element.name)}>
+          {element.name}
+        </button>)}
       <div>{products.length} pcs</div>
       {products.map(element =>
         <div key={element.id}>
-          <img src={element.image} alt="" />
-          <div>{element.id}</div>
-          <div>{element.name}</div>
-          <div>{element.image}</div>
-          <div>{element.price}</div>
-          <div>{element.category}</div>
-          <div>{element.description}</div>
-          <div>{element.active}</div>
+          <Link to={"/product/" + element.id}>
+            <img src={element.image} alt="" />
+            <div>{element.id}</div>
+            <div>{element.name}</div>
+            <div>{element.image}</div>
+            <div>{element.price}</div>
+            <div>{element.category}</div>
+            <div>{element.description}</div>
+            <div>{element.active}</div>
+          </Link>
           <Button variant="contained" onClick={() => addToCart(element)}>Add to cart</Button>
         </div>
       )}

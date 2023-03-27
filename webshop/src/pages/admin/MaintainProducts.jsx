@@ -1,25 +1,44 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import productsFromFile from '../../data/products.json';
-
+import config from '../../data/config.json';
 
 function MaintainProducts() {
-  const [products, setProducts] = useState(productsFromFile);
+  const [dbProducts, setDbProducts] =  useState([]);
   const searchRef = useRef();
+  const [products, setProducts] = useState([]);
+  const [isLoading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetch(config.productsDbUrl)
+      .then(res => res.json())
+      .then(json => {
+        setProducts(json || []); // || [] kui sealt tuleb tagastus "null" ehk tühjus
+        setDbProducts(json || []);
+        setLoading(false);
+      });
+  }, []);
 
-  const deleteProduct = (index) => {
-    productsFromFile.splice(index, 1);
-    setProducts(productsFromFile.slice());
+  const deleteProduct = (productClicked) => {
+    const index = dbProducts.findIndex(prod => prod.id === productClicked.id);
+    dbProducts.splice(index, 1);
+    
+    fetch(config.productsDbUrl, { "method": "PUT", "body": JSON.stringify(dbProducts)})
+        .then(response => response.json())
+        .then(() => searchFromProducts())
   }
 
   const searchFromProducts = () => {
-    const filteredProducts = productsFromFile.filter(element =>
-      element.name.toLowerCase().includes(searchRef.current.value.toLowerCase()));
+    const filteredProducts = dbProducts.filter(element =>
+      element.name.toLowerCase().includes(searchRef.current.value.toLowerCase()) || 
+      element.description.toLowerCase().includes(searchRef.current.value.toLowerCase()) ||
+      element.id.toString().toLowerCase().includes(searchRef.current.value.toLowerCase())
+      );
     setProducts(filteredProducts);
   }
 
-
+  if (isLoading === true) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div>
@@ -35,7 +54,7 @@ function MaintainProducts() {
           <div>{element.category}</div>
           <div>{element.description}</div>
           <div>{element.active}</div>
-          <button onClick={() => deleteProduct()}>Delete</button>
+          <button onClick={() => deleteProduct(element)}>Delete</button>
           <Link to={"/admin/edit-product/" + element.id}><button>Edit</button></Link>
         </div>
       )}

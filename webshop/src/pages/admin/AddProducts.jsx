@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useRef } from 'react';
-import productsFromFile from '../../data/products.json';
-import categoriesFromFile from '../../data/categories.json';
+import { useEffect } from 'react';
+// import categoriesFromFile from '../../data/categories.json';
+import config from '../../data/config.json';
 
 function AddProducts() {
-  const [products] = useState(productsFromFile);
   const [message, setMessage] = useState("Add new product!");
-
   const idRef = useRef();
   const nameRef = useRef();
   const imageRef = useRef();
@@ -14,12 +13,26 @@ function AddProducts() {
   const categoryRef = useRef();
   const descriptionRef = useRef();
   const activeRef = useRef();
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  
+
+  useEffect(() => {
+    fetch(config.categoriesDbUrl)
+    .then(res => res.json())
+    .then(json => setCategories(json || []));
+
+    fetch(config.productsDbUrl)
+      .then(res => res.json())
+      .then(json => {
+        setProducts(json || []); // || [] kui sealt tuleb tagastus "null" ehk tühjus
+      });
+  }, []);
 
   const add = () => {
     if (nameRef.current.value === "") {
       setMessage("A product with an empty name cannot be added");
     } else {
-      setMessage("Product added!" + nameRef.current.value);
       products.push({
         "id": Number(idRef.current.value),
         "name": nameRef.current.value,
@@ -30,10 +43,21 @@ function AddProducts() {
         "active": activeRef.current.checked,
       });
       nameRef.current.value = "";
+      fetch(config.productsDbUrl, { "method": "PUT", "body": JSON.stringify(products) })
+        .then(response => response.json())
+        .then(() => {
+          setMessage("Product added:" + nameRef.current.value + "!");
+          idRef.current.value = "";
+          imageRef.current.value = "";
+          priceRef.current.value = "";
+          nameRef.current.value = "";
+          descriptionRef.current.value = "";
+          activeRef.current.value = false;
+      })
     }
   }
   const checkIdUniqueness = () => {
-    const found = productsFromFile.find(element => element.id === Number(idRef.current.value));
+    const found = products.find(element => element.id === Number(idRef.current.value));
     if (found === undefined) {
       setMessage("");
     } else {
@@ -54,7 +78,7 @@ function AddProducts() {
       <input ref={priceRef} type="number" /> <br />
       <label>new products category:</label> <br />
       <select ref={categoryRef}>
-        {categoriesFromFile.map(element => <option>{element}</option>)}
+        {categories.map(element => <option key={element.name}>{element.name}</option>)}
       </select> <br />
       <label>New products description:</label> <br />
       <input ref={descriptionRef} type="text" /> <br />

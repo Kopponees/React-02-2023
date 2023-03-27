@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductsFromFile from '../../data/products.json';
+import config from '../../data/config.json';
 
 function SingleProduct() {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setLoading] = useState(true);
   const { id } = useParams();
-  const found = ProductsFromFile.find(element => element.id === Number(id));
+  const found = products.find(element => element.id === Number(id));
+
+  useEffect(() => {
+    fetch(config.productsDbUrl)
+      .then(res => res.json())
+      .then(json => {
+        setProducts(json || []); // || [] kui sealt tuleb tagastus "null" ehk tühjus
+        setLoading(false);
+      });
+  }, []);
+
+  // if (products.length === 0) {
+  //   return <div>Loading...</div>  ... kui on 0 siis näitab loading...
+  // }
+
+  if (isLoading === true) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div>
