@@ -42,6 +42,26 @@ function HomePage() {
     //5. paneme kogu ostukorvi sisu tagasi
   }
 
+  const sortAZ = () => {
+    const sortedProducts = products.sort((a, b) => a.name.localeCompare(b.name));
+    setProducts([...sortedProducts]);
+  };
+
+  const sortZA = () => {
+    const sortedProducts = products.sort((a, b) => b.name.localeCompare(a.name));
+    setProducts([...sortedProducts]);
+  };
+
+  const sortPriceAscending = () => {
+    const sortedProducts = products.sort((a, b) => a.price - b.price);
+    setProducts([...sortedProducts]);
+  };
+
+  const sortPriceDescending = () => {
+    const sortedProducts = products.sort((a, b) => b.price - a.price);
+    setProducts([...sortedProducts]);
+  };
+
   const filterByCategory = (categoryClicked) => {
     const result = dbProducts.filter(element => element.category === categoryClicked);
     setProducts(result);
@@ -53,6 +73,10 @@ function HomePage() {
 
   return (
     <div>
+      <button onClick={sortAZ}>Sort A-Z</button>
+      <button onClick={sortZA}>Sort Z-A</button>
+      <button onClick={sortPriceAscending}>Sort price ascending</button>
+      <button onClick={sortPriceDescending}>Sort price descending</button>
       {/* <button onClick={() => filterByCategory("belts")}>belts</button>
       <button onClick={() => filterByCategory("tent")}>tents</button>
       <button onClick={() => filterByCategory("camping")}>camping</button>
