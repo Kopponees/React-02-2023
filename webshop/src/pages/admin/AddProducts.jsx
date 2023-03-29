@@ -15,12 +15,12 @@ function AddProducts() {
   const activeRef = useRef();
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  
+
 
   useEffect(() => {
     fetch(config.categoriesDbUrl)
-    .then(res => res.json())
-    .then(json => setCategories(json || []));
+      .then(res => res.json())
+      .then(json => setCategories(json || []));
 
     fetch(config.productsDbUrl)
       .then(res => res.json())
@@ -30,31 +30,58 @@ function AddProducts() {
   }, []);
 
   const add = () => {
-    if (nameRef.current.value === "") {
-      setMessage("A product with an empty name cannot be added");
-    } else {
-      products.push({
-        "id": Number(idRef.current.value),
-        "name": nameRef.current.value,
-        "image": imageRef.current.value,
-        "price": Number(priceRef.current.value),
-        "category": categoryRef.current.value,
-        "description": descriptionRef.current.value,
-        "active": activeRef.current.checked,
-      });
-      nameRef.current.value = "";
-      fetch(config.productsDbUrl, { "method": "PUT", "body": JSON.stringify(products) })
-        .then(response => response.json())
-        .then(() => {
-          setMessage("Product added:" + nameRef.current.value + "!");
-          idRef.current.value = "";
-          imageRef.current.value = "";
-          priceRef.current.value = "";
-          nameRef.current.value = "";
-          descriptionRef.current.value = "";
-          activeRef.current.value = false;
-      })
+    if (idRef.current.value === "") {
+      setMessage("A product with an empty id cannot be added!");
+      return;
     }
+    if (nameRef.current.value === "") {
+      setMessage("A product with an empty name cannot be added!");
+      return;
+    }
+    // if (nameRef.current.value[0].toLowerCase() === nameRef.current.value[0]){
+    if (/^[A-Z].*/.test(nameRef.current.value) === false) {
+      setMessage("Can't add  product with small letter!");
+      return;
+    }
+    if (priceRef.current.value === "") {
+      setMessage("A product with an empty price cannot be added!");
+      return;
+    }
+    if (imageRef.current.value === "") {
+      setMessage("A product with an empty image cannot be added!");
+      return;
+    }
+    // if (imageRef.current.value.replaceAll(" ", "").length !== imageRef.current.value.length) {
+    //   setMessage("Can't add product image aadress with spaces!");
+    //   return;
+    // }
+    if (/^\S*$/.test(imageRef.current.value) === false){
+      setMessage("Can't add product image aadress with spaces!");
+      return;
+    }
+
+    products.push({
+      "id": Number(idRef.current.value),
+      "name": nameRef.current.value,
+      "image": imageRef.current.value,
+      "price": Number(priceRef.current.value),
+      "category": categoryRef.current.value,
+      "description": descriptionRef.current.value,
+      "active": activeRef.current.checked,
+    });
+    nameRef.current.value = "";
+    fetch(config.productsDbUrl, { "method": "PUT", "body": JSON.stringify(products) })
+      .then(response => response.json())
+      .then(() => {
+        setMessage("Product added:" + nameRef.current.value + "!");
+        idRef.current.value = "";
+        imageRef.current.value = "";
+        priceRef.current.value = "";
+        nameRef.current.value = "";
+        descriptionRef.current.value = "";
+        activeRef.current.value = false;
+      })
+
   }
   const checkIdUniqueness = () => {
     const found = products.find(element => element.id === Number(idRef.current.value));
@@ -66,7 +93,7 @@ function AddProducts() {
   }
 
   return (
-    <div>
+    <div className="center">
       {message} <br />
       <label>Product id</label> <br />
       <input onChange={checkIdUniqueness} ref={idRef} type="number" /> <br />

@@ -65,11 +65,11 @@ function EditProducts() {
   }
 
   if (isLoading === true) {
-    return <div>Loading...</div>
+    return <div className="center">Loading...</div>
   }
 
   return (
-    <div>
+    <div className="center">
       {product !== undefined && <div>
         {message} <br />
         <label>Product's id:</label> <br />

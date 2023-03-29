@@ -29,6 +29,18 @@ const resources = {
       "add-product": "Lisa toode",
       "maintain-products":"Halda tooteid",
     }
+  },
+  ru: {
+    translation: {
+      "admin": "В представление администратора",
+      "cart": "Корзина",
+      "contact": "Свяжитесь с нами",
+      "shops": "Наши магазины",
+      "maintain-shops": "Управление магазинами",
+      "maintain-categories": "Управление категориями",
+      "add-product": "Добавить продукт",
+      "maintain-products":"Управление продуктами",
+    }
   }
 };
 

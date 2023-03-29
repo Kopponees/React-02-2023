@@ -3,6 +3,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import ChangeView from './ChangeView';
+import { useEffect, useState } from 'react';
+import config from '../data/config.json';
 let DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
@@ -13,7 +15,13 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 function Map(props) { 
+  const [shops, setShops] = useState([]);
 
+  useEffect(() => {
+    fetch(config.shopsDbUrl)
+    .then(response => response.json())
+    .then(json => setShops(json || []));
+  }, []);
   return (
   <div>
 
@@ -23,7 +31,7 @@ function Map(props) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[59.4231, 24.7991]}>
+      {/* <Marker position={[59.4231, 24.7991]}>
         <Popup>
           Ülemiste keskus. <br /> Avatud 9-20
         </Popup>
@@ -42,7 +50,12 @@ function Map(props) {
         <Popup>
           Port Artur <br /> Avatud 10-21
         </Popup>
-        </Marker>
+        </Marker> */}
+        {shops.map(element => <Marker position={[element.longitude, element.latitude]}>
+          <Popup>
+            {element.name} <br /> {element.openTime}
+          </Popup>
+        </Marker>)}
     </MapContainer>
   </div>)
 }

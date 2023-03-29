@@ -28,8 +28,6 @@ function App() {
 
   return (
     <div className="App">
-      
-
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">My webshop</Navbar.Brand>
@@ -41,6 +39,7 @@ function App() {
           </Nav>
           <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")}/>
           <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")}/>
+          <img className="lang" src="/russian.png" alt="" onClick={() => updateLang("ru")}/>
         
         </Container>
       </Navbar>

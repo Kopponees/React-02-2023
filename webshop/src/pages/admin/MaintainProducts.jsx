@@ -37,15 +37,15 @@ function MaintainProducts() {
   }
 
   if (isLoading === true) {
-    return <div>Loading...</div>
+    return <div className="center">Loading...</div>
   }
 
   return (
     <div>
       <input onChange={searchFromProducts} ref={searchRef} type="text" />
       <div>{products.length} pcs</div>
-      {products.map(element =>
-        <div>
+      {products.map((element, index) =>
+        <div key={index} className={ element.active ? "active" : "inactive"}>
           <img src={element.image} alt="" />
           <div>{element.id}</div>
           <div>{element.name}</div>

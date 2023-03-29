@@ -9,7 +9,7 @@ function AdminHome() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="center">
       <Button as={Link} to="/admin/maintain-shops" variant="secondary">{t("maintain-shops")}</Button>
       <Button as={Link} to="/admin/maintain-categories" variant="secondary">{t("maintain-categories")}</Button>
       <Button as={Link} to="/admin/add-product" variant="secondary">{t("add-product")}</Button>

@@ -22,7 +22,7 @@ function SingleProduct() {
   // }
 
   if (isLoading === true) {
-    return <div>Loading...</div>
+    return <div className="center">Loading...</div>
   }
 
   return (

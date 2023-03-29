@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import config from '../../data/config.json';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
+
 
 
 function MaintainCategories() {
@@ -39,18 +42,20 @@ function MaintainCategories() {
   };
 
   return (
-    <div>
+    <div className="center">
       <ToastContainer />
+      <div className="categories">
       {categories.map((element, index) => (
-        <div key={index}>
-          {element.name}
-
-          <button onClick={() => deleteCategory(index)}>Delete</button>
+        <div key={index} className="category">
+          <span>{element.name}</span>
+        <Button variant='outlined' onClick={() => deleteCategory(index)}>x</Button>
         </div>
-      ))} <br />
-      <label>Category</label> <br />
-      <input onKeyUp={addCategory} ref={categoryRef} type="text" /> <br />
-      <button onClick={addCategory}>Add</button>
+      ))} 
+      </div>
+      <br />
+      {/* <label>Category</label> <br /> */}
+      <TextField label="Category" onKeyUp={addCategory} inputRef={categoryRef} type="text" /> <br />
+      <Button variant='contained' onClick={addCategory}>Add</Button>
     </div>
   )
 }

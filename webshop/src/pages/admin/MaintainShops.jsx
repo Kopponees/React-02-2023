@@ -1,3 +1,5 @@
+import { Button } from '@mui/material';
+import { ToastContainer, toast } from 'react-toastify';
 import React, { useEffect, useRef, useState } from 'react'
 import config from '../../data/config.json';
 
@@ -22,7 +24,7 @@ function MaintainShops() {
     } else {
       shops.push({
         "name": nameRef.current.value,
-        "open-time": openTimeRef.current.value,
+        "openTime": openTimeRef.current.value,
         "latitude": latitudeRef.current.value,
         "longitude": longitudeRef.current.value,
       });
@@ -30,7 +32,7 @@ function MaintainShops() {
       fetch(config.shopsDbUrl, { "method": "PUT", "body": JSON.stringify(shops) })
         .then(response => response.json())
         .then(() => {
-          setMessage("Shop added:" + nameRef.current.value + "!");
+          setMessage("Shop added" + nameRef.current.value + "!");
           nameRef.current.value = "";
           openTimeRef.current.value = "";
           latitudeRef.current.value = "";
@@ -38,8 +40,26 @@ function MaintainShops() {
         })
     }
   }
+  const deleteShop = (index) => {
+    shops.splice(index, 1);
+    fetch(config.shopsDbUrl, { "method": "PUT", "body": JSON.stringify(shops)})
+        .then(response => response.json())
+        .then(() => {
+          setShops(shops.slice());
+          toast.success("Successfully deleted!");
+        })
+  };
   return (
     <div>
+      <ToastContainer />
+      {shops.map((element, index) =>
+   <span>
+    <div>{element.name}</div>
+      <div>{element.latitude}</div>
+      <div>{element.longitude}</div>
+      <Button variant='outlined' onClick={() => deleteShop(index)}>x</Button>
+   </span>
+    )}
       {message} <br />
       <label>Shops name:</label>
       <input ref={nameRef} type="text" />
@@ -49,7 +69,7 @@ function MaintainShops() {
       <input ref={latitudeRef} type="text" />
       <label>Longitude:</label>
       <input ref={longitudeRef} type="text" />
-      <button onClick={add}>Add new shop</button>
+      <button onClick={add}>Add</button>
     </div>
   )
 }

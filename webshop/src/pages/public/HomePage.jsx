@@ -68,7 +68,7 @@ function HomePage() {
   }
 
   if (isLoading === true) {
-    return <div>Loading...</div>
+    return <div className="center">Loading...</div>
   }
 
   return (
