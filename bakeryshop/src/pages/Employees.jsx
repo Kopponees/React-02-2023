@@ -14,19 +14,6 @@ function Employees() {
 
   // TODO: Load data from backend service
 
-  // const addEmployee = () => {
-  //   if (first_nameRef.current.value === "") {
-  //     setMessage("Can't add empty text!");
-  //   } else { 
-  //     setMessage("Employee added! " + first_nameRef.current.value);
-  //     employees.push({
-  //       "id":idRef.current.value,
-  //       "name":(first_nameRef.current.value + last_nameRef.current.value),
-  //       "email":emailRef.current.value,
-  //       "avatar":avatarRef.current.value,
-  //     });
-  //     first_nameRef.current.value = "";
-  //   }
   const addEmployee = () => {
     if (first_nameRef.current.value === "") {
       setMessage("Can't add empty text!");

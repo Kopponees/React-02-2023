@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import config from '../../data/config.json';
 import Button from '@mui/material/Button';
+import { useContext } from 'react';
+import { CartSumContext } from '../../store/CartSumContext';
+import SortButtons from '../../components/home/SortButtons';
+import FilterBar from '../../components/home/FilterBar';
 
 function HomePage() {
-  const [dbProducts, setDbProducts] = useState([]); //veendun, et siin oleks alati andmebaasist(243tk)
+  const [dbProducts, setDbProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
+  const { cartSum, setCartSum } = useContext(CartSumContext);
 
   useEffect(() => {
     fetch(config.categoriesDbUrl)
@@ -32,71 +37,25 @@ function HomePage() {
     } else {
       cartLS.push({ product: productClicked, quantity: 1 });
     }
+    setCartSum(Number(cartSum) + productClicked.price);
     localStorage.setItem("cart", JSON.stringify(cartLS));
-
-
-    //1. võtame kogu vana ostukorvi seisu localstoragesse
-    //2. tuleb võtta jutumärgid maha(siiamaani-keel, telefon, email, aadress,veebilehe_varv)
-    //3. lisame ostukorvi ühe toote juurde
-    //4. panna jutumärgis tagasi peale
-    //5. paneme kogu ostukorvi sisu tagasi
   }
 
-  const sortAZ = () => {
-    const sortedProducts = products.sort((a, b) => a.name.localeCompare(b.name));
-    setProducts([...sortedProducts]);
-  };
-
-  const sortZA = () => {
-    const sortedProducts = products.sort((a, b) => b.name.localeCompare(a.name));
-    setProducts([...sortedProducts]);
-  };
-
-  const sortPriceAscending = () => {
-    const sortedProducts = products.sort((a, b) => a.price - b.price);
-    setProducts([...sortedProducts]);
-  };
-
-  const sortPriceDescending = () => {
-    const sortedProducts = products.sort((a, b) => b.price - a.price);
-    setProducts([...sortedProducts]);
-  };
-
-  const filterByCategory = (categoryClicked) => {
-    const result = dbProducts.filter(element => element.category === categoryClicked);
-    setProducts(result);
-  }
-
-  if (isLoading === true) {
+    if (isLoading === true) {
     return <div className="center">Loading...</div>
   }
 
   return (
     <div>
-      <button onClick={sortAZ}>Sort A-Z</button>
-      <button onClick={sortZA}>Sort Z-A</button>
-      <button onClick={sortPriceAscending}>Sort price ascending</button>
-      <button onClick={sortPriceDescending}>Sort price descending</button>
-      {/* <button onClick={() => filterByCategory("belts")}>belts</button>
-      <button onClick={() => filterByCategory("tent")}>tents</button>
-      <button onClick={() => filterByCategory("camping")}>camping</button>
-      <button onClick={() => filterByCategory("jeans")}>jeans</button> */}
-      {categories.map(element =>
-        <button key={element.name} onClick={() => filterByCategory(element.name)}>
-          {element.name}
-        </button>)}
+      <FilterBar dbProducts={dbProducts} setProducts={setProducts} categories={categories}/>
       <div>{products.length} pcs</div>
+      <SortButtons products={products} setProducts={setProducts} />
       {products.map(element =>
         <div key={element.id}>
           <Link to={"/product/" + element.id}>
             <img src={element.image} alt="" />
-            <div>{element.id}</div>
             <div>{element.name}</div>
-            <div>{element.image}</div>
             <div>{element.price}</div>
-            <div>{element.category}</div>
-            <div>{element.description}</div>
-            <div>{element.active}</div>
           </Link>
           <Button variant="contained" onClick={() => addToCart(element)}>Add to cart</Button>
         </div>

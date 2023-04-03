@@ -15,6 +15,8 @@ const resources = {
       "maintain-categories": "Maintain categories",
       "add-product": "Add product",
       "maintain-products":"Maintain products",
+      "login": "Log in",
+      "signup": "Sign up" 
 
     }
   },
@@ -28,6 +30,8 @@ const resources = {
       "maintain-categories": "Halda kategooriaid",
       "add-product": "Lisa toode",
       "maintain-products":"Halda tooteid",
+      "login": "Logi sisse",
+      "signup": "Registreeru"    
     }
   },
   ru: {
@@ -40,6 +44,8 @@ const resources = {
       "maintain-categories": "Управление категориями",
       "add-product": "Добавить продукт",
       "maintain-products":"Управление продуктами",
+      "login": "Войти",
+      "signup": "Регистрировать" 
     }
   }
 };
