@@ -109,7 +109,7 @@ function Employees() {
     </div>
     <ToastContainer
       position="bottom-right"
-      theme="dark"
+      theme="light"
     />
   </div>)
 }

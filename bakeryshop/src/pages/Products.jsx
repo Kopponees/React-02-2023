@@ -30,7 +30,13 @@ function Products() {
     setProducts(products.slice());
   }
 
+    const sortLowToHigh = () => {
+    const sortedProducts = [...products].sort((a, b) => a.price - b.price);
+    setProducts(sortedProducts);
+  }
+
   return (<div>
+    <Button variant="success" onClick={sortLowToHigh}>Sort Low to High</Button>
     <div className="container">
       <h2 className="mb-4">Products</h2>
       <Table className="table table-hover table-bordered">
@@ -44,10 +50,10 @@ function Products() {
         </thead>
         <tbody>
         {/* TODO: Order the products by price */}
-        {products.map((product, index) => 
-            <tr key={product.name + product.price}>
+        {products.map(product => 
+            <tr style={{ color: product.quantity < 3 ? 'red' : 'inherit' }} key={product.name + product.price}>
               <td style={{ fontWeight: 'bold' }}>{product.name}</td>
-              <td>{product.price}</td>
+              <td className="">{product.price}</td>
               {/*  TODO: Display the quantity in red if it is lower than 3 */}
               <td>{product.quantity}</td> 
               <td>{product.store}</td>
