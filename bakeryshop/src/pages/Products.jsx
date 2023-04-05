@@ -44,9 +44,9 @@ function Products() {
         </thead>
         <tbody>
         {/* TODO: Order the products by price */}
-        {products.map(product => 
+        {products.map((product, index) => 
             <tr key={product.name + product.price}>
-              <td>{product.name}</td>
+              <td style={{ fontWeight: 'bold' }}>{product.name}</td>
               <td>{product.price}</td>
               {/*  TODO: Display the quantity in red if it is lower than 3 */}
               <td>{product.quantity}</td> 
