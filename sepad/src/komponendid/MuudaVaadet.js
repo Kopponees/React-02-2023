@@ -1,9 +1,9 @@
-// import { useMap } from 'react-leaflet';
+import React from 'react'
 
-// function MuudaVaadet({ center, zoom }) {
-//   const map = useMap();
-//   map.setView(center, zoom);
-//   return null;
-// }
+function MuudaVaadet() {
+  return (
+    <div>MuudaVaadet</div>
+  )
+}
 
-// export default MuudaVaadet; 
+export default MuudaVaadet
