@@ -17,15 +17,19 @@ export const Kontakt = () => {
   };
 
   return (
-    < form className="kontaktv2li" ref={form} onSubmit={saadaEmail}>
-      <label>Nimi</label> <br />
-      <input type="text" name="from_name" /> <br />
-      <label>Email</label> <br />
-      <input type="email" name="from_email" /> <br />
-      <label>Sõnum</label> <br />
-      <textarea name="message" /> <br />
-      <input type="submit" value="Saada" /> <br />
-    </form>
+    <div>
+      <h1>Kontakt</h1>
+      <p>Palun täitke järgnev vorm, et võtta meiega ühendust:</p>
+      <form className="kontaktv2li" ref={form} onSubmit={saadaEmail}>
+        <label>Nimi</label> <br />
+        <input type="text" placeholder="Sisesta oma nimi" name="from_name" /> <br />
+        <label>Email</label> <br />
+        <input type="email" placeholder="Sisesta oma email" name="from_email" /> <br />
+        <label>Sõnum</label> <br />
+        <textarea name="message" placeholder="Sisesta"/> <br />
+        <input type="submit" value="Saada" /> <br />
+      </form>
+    </div>
   );
 };
 
