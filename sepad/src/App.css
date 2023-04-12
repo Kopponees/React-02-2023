@@ -1,6 +1,7 @@
-.app{
+.app {
   background-color: beige;
 }
+
 .avalehtNupud {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -15,65 +16,38 @@
   width: 150px;
   height: 50px;
   transform: translateZ(0);
-  
- 
+  margin-top: 13px;
 }
-.avalehtNupud:hover{
+
+.avalehtNupud:hover {
   cursor: pointer;
   text-transform: uppercase;
   position: relative;
   z-index: 1;
 }
+
 header {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.kontaktv2li {
+.row {
   display: flex;
-  float: right;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 50%;
-  margin: 0 auto;
-  
+  justify-content: flex;
+  background-image: "sepptelefoniga.png";
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-label {
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 5px;
+.col-md-6 {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
 }
 
-input[type="text"],
-input[type="email"] {
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-.kontaktv2li textarea{
-    height: 100px;
-    width: 80%;
-}
 
-input[type="submit"] {
-  background-color: #212529;
-  color: white;
-  padding: 12px 30px;
-  font-size: 16px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
-
-input[type="submit"]:hover {
-  background-color: #555;
+.sepptelefoniga {
+  position: absolute;
+  top: 22%;
+  right: 10%;
 }
