@@ -26,7 +26,7 @@ export const Kontakt = () => {
     <div className="row m-5">
       <div className="col-md-6 col-md">
         <h2>Kontakt</h2>
-        <p>Kui soovid meiega ühendust võtta, saada email läbi kontaktvormi:</p>
+        <p>Võta meiega julgelt ühendust!</p>
         <form ref={form} onSubmit={saadaEmail}>
           <div className="row">
             <div className="col-sm-6 form-group">
