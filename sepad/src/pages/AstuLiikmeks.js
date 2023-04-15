@@ -2,7 +2,7 @@ import React from 'react'
 
 function AstuLiikmeks() {
   return (
-    <div>AstuLiikmeks</div>
+    <div>Täida ära meie ankeet:</div>
   )
 }
 

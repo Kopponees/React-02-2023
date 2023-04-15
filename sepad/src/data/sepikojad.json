@@ -1,6 +1,58 @@
 [
-    {"name": "Peeter Reemani sepikoda",
-     "latitude":"57.7642",
-     "longitude":"26.9016"
+    {
+        "name": "Peeter Reemani sepikoda",
+        "piirkond": "Võrumaa",
+        "longitude": "57.7642",
+        "latitude": "26.9016"
+    } ,
+{
+        "name": "Ivar Feldmanni sepikoda",
+        "piirkond": "Võrumaa",
+        "longitude": "57.7524",
+        "latitude": "27.2493"
+    },
+    {
+        "name": "Alar Tamme sepikoda",
+        "piirkond": "Tartumaa",
+        "longitude": "58.3913",
+        "latitude": "26.7141"
+    },
+    {
+        "name": "Olav Surva sepikoda",
+        "piirkond": "Tartumaa",
+        "longitude": "58.3741",
+        "latitude": "26.6964"
+    },
+    {
+        "name": "Kalle Kotselaineni sepikoda",
+        "piirkond": "Tartumaa",
+        "longitude": "58.3698",
+        "latitude": "26.7167"
+    },
+    {
+        "name": "Andrus Kerge sepikoda",
+        "piirkond": "Tartumaa",
+        "longitude": "58.3698",
+        "latitude": "26.7167"
+    },
+    {
+        "name": "VVTTK sepikoda",
+        "piirkond": "Raplamaa",
+        "longitude": "58.7808",
+        "latitude": "24.2498"
+    },
+    {
+        "name": "Heigo Jelle sepikoda",
+        "piirkond": "Harjumaa",
+        "longitude": "59.4431",
+        "latitude": "24.7024"
+    },
+    {
+        "name": "Paju sepikoda",
+        "piirkond": "Saaremaa",
+        "longitude": "58.2620",
+        "latitude": "22.5010"
     }
+
+    
 ]
