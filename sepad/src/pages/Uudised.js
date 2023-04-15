@@ -2,7 +2,9 @@ import React from 'react'
 
 function Uudised() {
   return (
-    <div>Uudised</div>
+    <div>
+      <div>Palun täitke ära ankeedid</div>
+    </div>
   )
 }
 

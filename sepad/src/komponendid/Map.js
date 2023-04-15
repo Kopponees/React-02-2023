@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import ChangeView from './ChangeView';
-import sepikojad from '../data/sepikojad.json';
+import sepikojadFailist from '../data/sepikojad.json';
 import { useState } from 'react';
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -15,7 +15,7 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 function Map(props) { 
-  const [sepiKojad] = useState(sepikojad);
+  const [sepikojad, määraSepikojad] = useState(sepikojadFailist);
 
   return (
     <div>
@@ -26,7 +26,7 @@ function Map(props) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-       {sepiKojad.map(element =>  <Marker position={[element.longitude, element.latitude]} >
+       {sepikojad.map(element => <Marker position={[element.longitude, element.latitude]} >
             <Popup>
               {element.name} <br />
             </Popup>
