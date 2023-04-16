@@ -1,7 +1,6 @@
 .app {
   background-color: beige;
 }
-
 .avalehtNupud {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -18,20 +17,17 @@
   transform: translateZ(0);
   margin-top: 13px;
 }
-
 .avalehtNupud:hover {
   cursor: pointer;
   text-transform: uppercase;
   position: relative;
   z-index: 1;
 }
-
 header {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
 .row {
   display: flex;
   justify-content: flex;
@@ -39,18 +35,15 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .col-md-6 {
   background-color: rgba(255, 255, 255, 0.7);
   position: fixed;
 }
-
 .sepptelefoniga {
   position: absolute;
   top: 22%;
   right: 10%;
 }
-
 .map {
   height: 400px;
   width: 65%;
@@ -59,7 +52,6 @@ header {
   position: relative;
   z-index: 0;
 }
-
 .sepikojadnupud {
   color: #212529;
   margin-top: 30px;
@@ -67,7 +59,6 @@ header {
   width: 200px;
   position: absolute;
 }
-
 .kõiksepikojad {
   color: #212529;
   margin-top: 10px;
@@ -75,3 +66,32 @@ header {
   width: 200px;
   position: absolute;
 }
+.epoodimage{
+  height: 300px;
+  width: 300px;
+}
+.epoodtekst{
+  margin-left: 5px;
+  
+}
+.epoodname{
+  text-transform: uppercase;
+}
+.epoodprice{
+  font-weight: bold;
+}
+.epoodblacksmith{
+  font-style: italic;
+  
+}
+.kaubad{
+  margin-bottom: 10px;
+  width: 33.3%,
+  
+}
+.lang{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+

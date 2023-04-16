@@ -1,0 +1,245 @@
+[
+    {
+        "id": 1,
+        "name": "ahjuroop",
+        "category": "kaminatarbed",
+        "blacksmith": "Ivar Feldman",
+        "price": 100,
+        "image": "https://atlas-content-cdn.pixelsquid.com/stock-images/fireplace-poker-VRZl4y5-600.jpg",
+        "active": true
+    },
+    {
+        "id": 2,
+        "name": "kaminaplekk lilledega",
+        "category": "kaminatarbed",
+        "blacksmith": "Olav Surva",
+        "price": 450,
+        "image": "https://sepitsus.ee/wp-content/uploads/2021/11/kaminaplekk-suur-lilled-2-vaike-150x150.jpg",
+        "active": true
+    },
+    {
+        "id": 3,
+        "name": "kokanuga",
+        "category": "terariistad",
+        "blacksmith": "Rauno Paju",
+        "price": 300,
+        "image": "https://www.buckknives.com/images/products/zoom/0931BKS-B.jpg",
+        "active": true
+    },
+    {
+        "id": 4,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 5,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 6,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 7,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 8,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 9,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 10,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 11,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 12,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 13,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 14,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 15,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 16,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 17,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 18,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 19,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 20,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 21,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 22,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 23,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 24,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 25,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 26,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 27,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 28,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 29,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    },
+    {
+        "id": 30,
+        "name": "",
+        "category": "",
+        "price": 100,
+        "image": "",
+        "active": true
+    }
+]

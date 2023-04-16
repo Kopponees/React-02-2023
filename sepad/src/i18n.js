@@ -7,12 +7,42 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      "Welcome to React": "Welcome to React and react-i18next"
+      "epood":"Shop",
+      "ostukorv":"Cart",
+      "uudised":"News",
+      "kontakt":"Contact",
+      "meiesepad":"Our Blacksmiths",
+      "astuliikmeks":"Join us",
+      "ajalugu":"History",
+      "meist":"About us",
+      "sepikojad":"Smitheries"
+
     }
   },
-  fr: {
+  ee: {
     translation: {
-      "Welcome to React": "Bienvenue à React et react-i18next"
+      "epood":"E-pood",
+      "ostukorv":"Ostukorv",
+      "uudised":"Uudised",
+      "kontakt":"Kontakt",
+      "meiesepad":"Meie sepad",
+      "astuliikmeks":"Astu liikmeks",
+      "ajalugu":"Ajalugu",
+      "meist":"Meist",
+      "sepikojad":"Sepikojad"
+    }
+  },
+  ru: {
+    translation: {
+      "epood":"Магазин",
+      "ostukorv":"Телега",
+      "uudised":"Новости",
+      "kontakt":"Контакт",
+      "meiesepad":"Наши кузнецы",
+      "astuliikmeks":"Стать участником",
+      "ajalugu":"История",
+      "meist":"О нас",
+      "sepikojad":"Кузница"
     }
   }
 };
@@ -21,7 +51,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    lng: "ee", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
 
