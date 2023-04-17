@@ -1,8 +1,10 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { useTranslation } from 'react-i18next';
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import AstuLiikmeks from './pages/AstuLiikmeks';
 import EPood from './pages/EPood';
 import Meist from './pages/Meist';
@@ -11,7 +13,6 @@ import Sepikojad from './pages/Sepikojad';
 import Avaleht from './pages/Avaleht';
 import Kontakt from './pages/Kontakt';
 import Ostukorv from './pages/Ostukorv';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import MeieSepad from './pages/MeieSepad';
 import Ajalugu from './pages/Ajalugu';
 import { useEffect, useState } from 'react';
@@ -28,7 +29,7 @@ function App() {
   useEffect(() => {
     const lang = localStorage.getItem("language");
     if (lang) {
-      updateLang(lang);
+      // updateLang(lang);
     }
   }, []);
 
@@ -42,42 +43,40 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar
-        className="navbar navbar-expand-lg" bg="dark" variant="dark">
-        <Container style={{ display: "flex", alignItems: "center", width: "100%" }}>
-          <Navbar.Brand href="/">
-            <img
-              alt=""
-              src="/favicon.ico"
-              width="110"
-              height="80"
-              className="d-inline-block align-top"
-            />{' '}
-
-            <Link to="/epood"><button className="avalehtNupud">{t("epood")}</button></Link>
-            <Link to="/ostukorv"><button className="avalehtNupud">{t("ostukorv")}</button></Link>
-            <Link to="/kontakt"><button className="avalehtNupud">{t("kontakt")}</button></Link>
-            <NavDropdown className="avalehtNupud"
-              id="nav-dropdown-dark-example"
-              title={t("meist")}
-              menuVariant="dark"
-              show={n2itaMeist}
-              onMouseEnter={hiirPeal}
-              onMouseLeave={hiirLahkub}
-            >
-              <NavDropdown.Item className="meistnupud" href="meist">{t("meist")}</NavDropdown.Item>
-              <NavDropdown.Item className="meistnupud" href="meiesepad">{t("meiesepad")}</NavDropdown.Item>
-              <NavDropdown.Item className="meistnupud" href="ajalugu">{t("ajalugu")}</NavDropdown.Item>
-              <NavDropdown.Item className="meistnupud" href="sepikojad">{t("sepikojad")}</NavDropdown.Item>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="/"><img className="favicon" src="favicon.ico" alt="" /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav>
+            <Nav.Link className="avalehtnupp"href="/epood">{t("epood")}</Nav.Link>
+            <Nav.Link className="avalehtnupp" href="/kontakt">{t("kontakt")}</Nav.Link>
+            <Nav.Link className="avalehtnupp" href="/uudised">{t("uudised")}</Nav.Link>
+            <NavDropdown className="meistnupp"title={t("meist")} id="collasible-nav-dropdown"
+            show={n2itaMeist}
+            onMouseEnter={hiirPeal}
+            onMouseLeave={hiirLahkub}>
+              <NavDropdown.Item href="/meist">{t("meist")}</NavDropdown.Item>
+              <NavDropdown.Item href="/ajalugu">
+               {t("ajalugu")}
+              </NavDropdown.Item>
+              <NavDropdown.Item  href="/meiesepad">{t("meiesepad")}</NavDropdown.Item>
+              {/* <NavDropdown.Divider /> */}
+              <NavDropdown.Item  href="/sepikojad">
+                {t("sepikojad")}
+              </NavDropdown.Item>
             </NavDropdown>
-            <Link to="/uudised"><button className="avalehtNupud">{t("uudised")}</button></Link>
-            <Link to="/astuliikmeks"><button className="avalehtNupud">{t("astuliikmeks")}</button></Link>
-            <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")} />
+            <Nav.Link className="avalehtnupp" href="/astuliikmeks">{t("astuliikmeks")}</Nav.Link>
+          </Nav>
+          <Nav>
+            </Nav>
+        <Nav.Link href="/ostukorv"><img className="ostukorvnupp"src="ostukorv.png" alt="" /></Nav.Link>
+        <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")} />
             <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")} />
             <img className="lang" src="/russian.png" alt="" onClick={() => updateLang("ru")} />
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
 
       <Routes>
         <Route path="" element={<Avaleht />} />

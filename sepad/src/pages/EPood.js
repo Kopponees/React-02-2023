@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import KaubadFailist from '../data/kaubad.json';
+import "../css/Ostukorv.css";
 
 function EPood() {
-  const [toode, muudaToodet]= useState(KaubadFailist);
+  const [toode]= useState(KaubadFailist);
 
   const lisaOstukorvi = (klikitudToode) => {
     const cartLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
