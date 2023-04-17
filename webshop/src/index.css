@@ -12,3 +12,9 @@ code {
 font-family: 'Gloock', serif;
 font-family: 'Roboto Condensed', sans-serif;
 }
+
+.App {
+  position: relative;
+  min-height:  100vh;
+  padding-bottom: 80px;
+}

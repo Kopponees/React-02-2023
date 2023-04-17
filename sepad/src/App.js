@@ -17,67 +17,67 @@ import Ajalugu from './pages/Ajalugu';
 import { useEffect, useState } from 'react';
 
 
-  function App() {
-    const [n2itaMeist, muudaN2itaMeist] = useState(false);
-    const { t, i18n } = useTranslation();
+function App() {
+  const [n2itaMeist, muudaN2itaMeist] = useState(false);
+  const { t, i18n } = useTranslation();
 
-    const updateLang = (newLang) => {
-      i18n.changeLanguage(newLang);
-      localStorage.setItem("language",newLang);
+  const updateLang = (newLang) => {
+    i18n.changeLanguage(newLang);
+    localStorage.setItem("language", newLang);
+  }
+  useEffect(() => {
+    const lang = localStorage.getItem("language");
+    if (lang) {
+      updateLang(lang);
     }
-    useEffect(() => {
-      const lang = localStorage.getItem("language");
-      if (lang) {
-        updateLang(lang);
-      }
-    }, []);
-  
-    const hiirPeal = () => {
-      muudaN2itaMeist(true);
-    };
-  
-    const hiirLahkub = () => {
-      muudaN2itaMeist(false);
-    };
-  
-    return (
-      <div className="App">
-        <Navbar 
-        className="navbar navbar-expand-lg"  bg="dark" variant="dark">
-          <Container style={{ display: "flex", alignItems: "center", width:"100%" }}>
-            <Navbar.Brand href="/">
-              <img
-                alt=""
-                src="/favicon.ico"
-                width="110"
-                height="80"
-                className="d-inline-block align-top"
-              />{' '}
-            
-              <Link to="/epood"><button className="avalehtNupud">{t("epood")}</button></Link>
-              <Link to="/ostukorv"><button className="avalehtNupud">{t("ostukorv")}</button></Link>
-              <Link to="/kontakt"><button className="avalehtNupud">{t("kontakt")}</button></Link>
-              <NavDropdown className="avalehtNupud"
-                id="nav-dropdown-dark-example"
-                title={t("meist")}
-                menuVariant="dark"
-                show={n2itaMeist}
-                onMouseEnter={hiirPeal}
-                onMouseLeave={hiirLahkub}
-              >
-                <NavDropdown.Item className="meistnupud" href="meist">{t("meist")}</NavDropdown.Item>
-                <NavDropdown.Item className="meistnupud" href="meiesepad">{t("meiesepad")}</NavDropdown.Item>
-                <NavDropdown.Item className="meistnupud" href="ajalugu">{t("ajalugu")}</NavDropdown.Item>
-                <NavDropdown.Item className="meistnupud" href="sepikojad">{t("sepikojad")}</NavDropdown.Item>
-              </NavDropdown>
-              <Link to="/uudised"><button className="avalehtNupud">{t("uudised")}</button></Link>
-              <Link to="/astuliikmeks"><button className="avalehtNupud">{t("astuliikmeks")}</button></Link>
-              <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")}/>
-              <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")}/>
-              <img className="lang" src="/russian.png" alt="" onClick={() => updateLang("ru")}/>
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
+  }, []);
+
+  const hiirPeal = () => {
+    muudaN2itaMeist(true);
+  };
+
+  const hiirLahkub = () => {
+    muudaN2itaMeist(false);
+  };
+
+  return (
+    <div className="App">
+      <Navbar
+        className="navbar navbar-expand-lg" bg="dark" variant="dark">
+        <Container style={{ display: "flex", alignItems: "center", width: "100%" }}>
+          <Navbar.Brand href="/">
+            <img
+              alt=""
+              src="/favicon.ico"
+              width="110"
+              height="80"
+              className="d-inline-block align-top"
+            />{' '}
+
+            <Link to="/epood"><button className="avalehtNupud">{t("epood")}</button></Link>
+            <Link to="/ostukorv"><button className="avalehtNupud">{t("ostukorv")}</button></Link>
+            <Link to="/kontakt"><button className="avalehtNupud">{t("kontakt")}</button></Link>
+            <NavDropdown className="avalehtNupud"
+              id="nav-dropdown-dark-example"
+              title={t("meist")}
+              menuVariant="dark"
+              show={n2itaMeist}
+              onMouseEnter={hiirPeal}
+              onMouseLeave={hiirLahkub}
+            >
+              <NavDropdown.Item className="meistnupud" href="meist">{t("meist")}</NavDropdown.Item>
+              <NavDropdown.Item className="meistnupud" href="meiesepad">{t("meiesepad")}</NavDropdown.Item>
+              <NavDropdown.Item className="meistnupud" href="ajalugu">{t("ajalugu")}</NavDropdown.Item>
+              <NavDropdown.Item className="meistnupud" href="sepikojad">{t("sepikojad")}</NavDropdown.Item>
+            </NavDropdown>
+            <Link to="/uudised"><button className="avalehtNupud">{t("uudised")}</button></Link>
+            <Link to="/astuliikmeks"><button className="avalehtNupud">{t("astuliikmeks")}</button></Link>
+            <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")} />
+            <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")} />
+            <img className="lang" src="/russian.png" alt="" onClick={() => updateLang("ru")} />
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
 
       <Routes>
         <Route path="" element={<Avaleht />} />
@@ -93,7 +93,7 @@ import { useEffect, useState } from 'react';
       </Routes>
 
 
-  </div>
+    </div>
   );
 }
 

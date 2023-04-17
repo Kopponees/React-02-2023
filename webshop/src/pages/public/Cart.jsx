@@ -56,6 +56,7 @@ function Cart() {
       </div>
 
       {cart.map((element, index) =>
+      <div className="product-wrapper">
         <div className="product" key={index}>
           <img className="image" src={element.product.image} alt="" />
           <div className="name">{element.product.name}</div>
@@ -67,6 +68,12 @@ function Cart() {
           </div>
           <div className="sum">{(element.product.price * element.quantity).toFixed(2)} €</div>
           <img className="button" onClick={() => deleteProduct(index)} src="trash.png" alt="" />
+      </div>
+          <div className="mobile-row">
+            <img className="button" onClick={() => decreaseQuantity(index)} src="minus.png" alt="" />
+            <div>{element.quantity}</div>
+            <img className="button" onClick={() => increaseQuantity(index)} src="add.png" alt="" />
+          </div>
         </div>
       )}
       {cart.length > 0 &&

@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { CartSumContext } from '../../store/CartSumContext';
 import SortButtons from '../../components/home/SortButtons';
 import FilterBar from '../../components/home/FilterBar';
+import "../../css/Homepage.css";
 
 function HomePage() {
   const [dbProducts, setDbProducts] = useState([]);
@@ -50,8 +51,9 @@ function HomePage() {
       <FilterBar dbProducts={dbProducts} setProducts={setProducts} categories={categories}/>
       <div>{products.length} pcs</div>
       <SortButtons products={products} setProducts={setProducts} />
-      {products.map(element =>
-        <div key={element.id}>
+      <div className="product-wrapper-home">
+        {products.map(element =>
+        <div className="product-home" key={element.id}>
           <Link to={"/product/" + element.id}>
             <img src={element.image} alt="" />
             <div>{element.name}</div>
@@ -59,7 +61,7 @@ function HomePage() {
           </Link>
           <Button variant="contained" onClick={() => addToCart(element)}>Add to cart</Button>
         </div>
-      )}
+      )}</div>
     </div>
   )
 }
