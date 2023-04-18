@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import '../css/Ostukorv.css';
 
-import { useContext } from 'react';
-import { CartSumContext } from '../../store/CartSumContext';
-import ParcelMachine from '../../components/cart/ParcelMachine';
-import Payment from '../../components/cart/Payment';
+
+import ParcelMachine from '../komponendid/cart/Pakiautomaadid';
+import Payment from '../komponendid/cart/Makse';
 
 function Ostukorv() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
-  const { setCartSum } = useContext(CartSumContext);
 
   const decreaseQuantity = (index) => {
     cart[index].quantity = cart[index].quantity - 1;
@@ -18,27 +17,27 @@ function Ostukorv() {
     }
     setCart(cart.slice());
     localStorage.setItem("cart", JSON.stringify(cart));
-    setCartSum(calculatetotalValue());
+  
 
   }
   const increaseQuantity = (index) => {
     cart[index].quantity = cart[index].quantity + 1;
     setCart(cart.slice());
     localStorage.setItem("cart", JSON.stringify(cart));
-    setCartSum(calculatetotalValue());
+    
   }
 
   const deleteProduct = (index) => {
     cart.splice(index, 1);
     setCart(cart.slice());
     localStorage.setItem("cart", JSON.stringify(cart));
-    setCartSum(calculatetotalValue());
+  
   }
 
   const empty = () => {
     setCart([]);
     localStorage.setItem("cart", JSON.stringify([]));
-    setCartSum("0.00");
+  
   }
   const calculatetotalValue = () => {
     let totalValue = 0;
@@ -49,9 +48,9 @@ function Ostukorv() {
   return (
     <div>
       <div className="cart-top">
-        {cart.length > 0 && <Button variant="outlined" onClick={empty}>Empty</Button>}
-        {cart.length === 0 && <div>Cart is empty! <Link to="/">Add products</Link></div>}
-        {cart.length > 0 && <div> Total of {cart.length} products in cart!</div>}
+        {cart.length > 0 && <Button variant="outlined" onClick={empty}>Tühjenda</Button>}
+        {cart.length === 0 && <div>OStukorv on tühi! <Link to="/epood">Sepiseid lisama</Link></div>}
+        {cart.length > 0 && <div> Ostukorvis on {cart.length} toodet!</div>}
       </div>
 
       {cart.map((element, index) =>

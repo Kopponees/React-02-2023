@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import KaubadFailist from '../data/kaubad.json';
-import "../css/Ostukorv.css";
+import "../css/Epood.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';

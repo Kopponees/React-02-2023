@@ -1,0 +1,29 @@
+.product-wrapper-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 0 10%;
+    }
+    
+    .product-home {
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        margin-top: 10px;
+    }
+    
+    .product-home img {
+        width: 100px;
+        height: 100px;
+        
+    }
+    
+    .product-home:hover {
+        box-shadow: 10px 10px 10px 10px lightgrey;
+    }
+
+    .mb-2 {
+        margin-top: 3px;
+        margin-left: 3px;
+    }
