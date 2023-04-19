@@ -1,5 +1,6 @@
 .cart-top {
     margin-left: 10%;
+    margin-top: 3px;
 }
 
 .product-wrapper {
@@ -11,6 +12,7 @@
 .product {
     display: flex;
     justify-content: space-between;
+    margin: 10px;
 }
 
 .name {
@@ -23,6 +25,7 @@
 
 .image {
     width: 100px;
+    margin-left: 10px;
 }
 
 .sum {
@@ -90,3 +93,7 @@
 }
 
 @media only screen and (max-width: 450px) {}
+
+.totalvalue {
+    font-weight: bolder;
+}

@@ -80,6 +80,7 @@ header {
   width: 30px;
   height: 30px;
   margin-left: 10px;
+
 }
 
 .favicon {
@@ -87,13 +88,14 @@ header {
   height: 75px;
 
 }
+
 .avalehtnupp {
-  margin-left: 70px;
+  margin-left: 50px;
 }
 
 .meistnupp {
   margin-left: 70px;
-  
+
 }
 
 .lang:hover {
@@ -103,6 +105,27 @@ header {
 .ostukorvnupp {
   width: 35px;
   height: 35px;
-  margin-left: 90px;
-  
+  margin-left: 10px;
+  margin-right: 82px;
+}
+
+.cartsum {
+  color: antiquewhite;
+  margin-left: 30px;
+}
+@media (max-width: 768px) {
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+  }
 }

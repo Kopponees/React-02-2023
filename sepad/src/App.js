@@ -16,9 +16,12 @@ import Ostukorv from './pages/Ostukorv';
 import MeieSepad from './pages/MeieSepad';
 import Ajalugu from './pages/Ajalugu';
 import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { CartSumContext } from './pood/CartSumContext';
 
 
 function App() {
+  const { cartSum } = useContext(CartSumContext);
   const [n2itaMeist, muudaN2itaMeist] = useState(false);
   const { t, i18n } = useTranslation();
 
@@ -70,6 +73,7 @@ function App() {
           </Nav>
           <Nav>
             </Nav>
+            <div className="cartsum">{cartSum}€</div>
         <Nav.Link href="/ostukorv"><img className="ostukorvnupp"src="ostukorv.png" alt="" /></Nav.Link>
         <img className="lang" src="/english.png" alt="" onClick={() => updateLang("en")} />
             <img className="lang" src="/estonian.png" alt="" onClick={() => updateLang("ee")} />

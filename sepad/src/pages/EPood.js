@@ -7,16 +7,18 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 function EPood() {
-  const [toode]= useState(KaubadFailist);
+  const [product]= useState(KaubadFailist);
 
-  const lisaOstukorvi = (klikitudToode) => {
-    const cartLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
-    const index = cartLS.findIndex(ostukorvToode => ostukorvToode.toode.id === klikitudToode.id);
+  const lisaOstukorvi = (productClicked) => {
+    const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
+    const index = cartLS.findIndex(cartProduct => cartProduct.product.id === productClicked.id);
     if (index !== -1) {
       cartLS[index].quantity = cartLS[index].quantity + 1;
     } else {
-      cartLS.push({ kaup: klikitudToode, quantity: 1 });
-    }}
+      cartLS.push({ product: productClicked, quantity: 1 });
+    }
+    localStorage.setItem("cart", JSON.stringify(cartLS));
+  };
     
    
   return (
@@ -33,7 +35,7 @@ function EPood() {
               variant="dark"
               title="tooted"
             >
-              <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+              <Dropdown.Item eventKey="1"></Dropdown.Item>
               <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
               <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
               <Dropdown.Divider />
@@ -43,14 +45,14 @@ function EPood() {
         )}
       </div>
       <div className="product-wrapper-home">
-      {toode.map(element=>
+      {product.map(element=>
         <div className="product-home">
           <img className="epoodimage" src={element.image} alt="" />
           <div className="epoodtekst">
             <div className="epoodname">{element.name}</div>
           <div className="epoodprice">{element.price}€</div>
           <div className="epoodblacksmith">{element.blacksmith}</div>
-          <Button variant="outline-dark" onClick={lisaOstukorvi}>lisa korvi</Button>
+          <Button variant="outline-dark" onClick={() => lisaOstukorvi(element)}>lisa korvi</Button>
           </div>
           
         </div>

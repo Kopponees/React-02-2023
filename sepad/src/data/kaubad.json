@@ -3,8 +3,8 @@
         "id": 1,
         "name": "ahjuroop",
         "category": "kaminatarbed",
-        "blacksmith": "Ivar Feldman",
-        "price": 100,
+        "blacksmith": "Andrus Kerge",
+        "price": 80,
         "image": "https://atlas-content-cdn.pixelsquid.com/stock-images/fireplace-poker-VRZl4y5-600.jpg",
         "active": true
     },
@@ -14,7 +14,7 @@
         "category": "kaminatarbed",
         "blacksmith": "Olav Surva",
         "price": 450,
-        "image": "https://sepitsus.ee/wp-content/uploads/2021/11/kaminaplekk-suur-lilled-2-vaike-150x150.jpg",
+        "image": "https://th.bing.com/th/id/R.4713001f1a093dea392dc5bb07345a72?rik=KlvF%2bmKRLURHdQ&pid=ImgRaw&r=0",
         "active": true
     },
     {
@@ -28,26 +28,29 @@
     },
     {
         "id": 4,
-        "name": "",
-        "category": "",
-        "price": 100,
-        "image": "",
+        "name": "kirves",
+        "category": "terariistad",
+        "blacksmith": "Peeter Reemann",
+        "price": 325,
+        "image": "https://aiataht.ee/img-i_bb6ee440bbdd8e356bd85ff042c6acb7-640x450-1-ffffff-40.jpg",
         "active": true
     },
     {
         "id": 5,
-        "name": "",
-        "category": "",
-        "price": 100,
-        "image": "",
+        "name": "kohvilaud",
+        "category": "disain element",
+        "blacksmith": "Ivar Feldman",
+        "price": 5836,
+        "image": "http://4.bp.blogspot.com/-gRn6zTjtQyo/UYjn83BmPeI/AAAAAAAAADk/Aa-nudDeG_c/s400/laud_0436.jpg",
         "active": true
     },
     {
         "id": 6,
-        "name": "",
-        "category": "",
-        "price": 100,
-        "image": "",
+        "name": "ukse käepide",
+        "category": "disain element",
+        "blacksmith": "Villu Mustkivi",
+        "price": 5000,
+        "image": "https://thorman.ee/wp-content/uploads/2019/01/taluukse-link-296x300.jpg",
         "active": true
     },
     {

@@ -12,7 +12,7 @@ function Payment({ sum, empty }) {
           "order_reference": Math.random() * 9999999,
           "nonce": "a9b7f7e" + new Date() + Math.random() * 9999999,
           "timestamp": new Date(),
-          "customer_url": "https://webshop-ea72b.web.app"
+          "customer_url": "https://sepad-2375c.web.app/"
         }
         const headersData = {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ function Payment({ sum, empty }) {
           }); //vastusest(201 ehk edukas) realt, mis on makse link
       }
   return (
-    <Button variant='contained' onClick={pay}>Pay</Button>
+    <Button variant='contained' onClick={pay}>Maksa</Button>
   )
 }
 

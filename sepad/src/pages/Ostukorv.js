@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import '../css/Ostukorv.css';
-
-
 import ParcelMachine from '../komponendid/cart/Pakiautomaadid';
 import Payment from '../komponendid/cart/Makse';
+
 
 function Ostukorv() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
@@ -49,7 +48,7 @@ function Ostukorv() {
     <div>
       <div className="cart-top">
         {cart.length > 0 && <Button variant="outlined" onClick={empty}>Tühjenda</Button>}
-        {cart.length === 0 && <div>OStukorv on tühi! <Link to="/epood">Sepiseid lisama</Link></div>}
+        {cart.length === 0 && <div>Ostukorv on tühi! <Link to="/epood">Sepiseid lisama</Link></div>}
         {cart.length > 0 && <div> Ostukorvis on {cart.length} toodet!</div>}
       </div>
 
@@ -76,7 +75,7 @@ function Ostukorv() {
       )}
       {cart.length > 0 &&
         <div className="cart-bottom">
-          <div> Total Value: {calculatetotalValue()} €</div>
+          <div> Kogu summa: {calculatetotalValue()} €</div>
           <ParcelMachine />
           <Payment sum={calculatetotalValue()} empty={empty} />
         </div>}
