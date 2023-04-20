@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import KaubadFailist from '../data/kaubad.json';
 import "../css/Epood.css";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Checkbox from '@mui/material/Checkbox';
+
 
 function EPood() {
-  const [product] = useState(KaubadFailist);
+  const [products] = useState(KaubadFailist);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedBlacksmith, setSelectedBlacksmith] = useState(null);
 
   const lisaOstukorvi = (productClicked) => {
     const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
@@ -16,59 +17,66 @@ function EPood() {
       cartLS[index].quantity = cartLS[index].quantity + 1;
     } else {
       cartLS.push({ product: productClicked, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cartLS));
-  };
+      localStorage.setItem("cart", JSON.stringify(cartLS));
+    };
+  }
 
-  const blacksmiths = [...new Set(product.map((item) => item.blacksmith))];
+  const categories = [...new Set(products.map(product => product.category))];
+  const blacksmiths = [...new Set(products.map(product => product.blacksmith))];
+  const filteredProducts = products.filter(product => {
+    if (selectedCategory && selectedCategory !== product.category) {
+      return false;
+    }
+    if (selectedBlacksmith && selectedBlacksmith !== product.blacksmith) {
+      return false;
+    }
+    return true;
+  });
 
   return (
-    <>
-      <div className="mb-2">
-        <DropdownButton className="sepadnuppepood"
-          as={ButtonGroup}
-          id="dropdown-button-drop-blacksmith"
-          variant="dark"
-          title="Sepp"
-        >
-          {blacksmiths.map((blacksmith) => (
-            <Dropdown.Item key={blacksmith} eventKey={blacksmith}>
-              {blacksmith}
-            </Dropdown.Item>
+    <div>
+      <div className="checkbox-wrapper">
+        <div className="category-wrapper">
+          <div>toote kategooriad:</div>
+          {categories.map(category => (
+            <div key={category}>
+              <Checkbox
+                checked={selectedCategory === category}
+                onChange={() => setSelectedCategory(selectedCategory === category ? null : category)}
+                label={category}
+              />
+              <span>{category}</span>
+            </div>
           ))}
-        </DropdownButton>
-        <DropdownButton className="toodenuppepood"
-          as={ButtonGroup}
-          id="dropdown-button-drop-name"
-          variant="dark"
-          title="Toode"
-        >
-          {product.map((item) => (
-            <Dropdown.Item key={item.id} eventKey={item.name}>
-              {item.name}
-            </Dropdown.Item>
+        </div>
+        <div className="blacksmith-wrapper">
+          <div>sepad:</div>
+          {blacksmiths.map(blacksmith => (
+            <div key={blacksmith}>
+              <Checkbox
+                checked={selectedBlacksmith === blacksmith}
+                onChange={() => setSelectedBlacksmith(selectedBlacksmith === blacksmith ? null : blacksmith)}
+                label={blacksmith}
+              />
+              <span>{blacksmith}</span>
+            </div>
           ))}
-        </DropdownButton>
-      </div>
+        </div> </div>
+
       <div className="product-wrapper-home">
-        {product.map((element) => (
+        {filteredProducts.map(element =>
           <div className="product-home" key={element.id}>
             <img className="epoodimage" src={element.image} alt="" />
             <div className="epoodtekst">
               <div className="epoodname">{element.name}</div>
               <div className="epoodprice">{element.price}€</div>
               <div className="epoodblacksmith">{element.blacksmith}</div>
-              <Button
-                variant="outline-dark"
-                onClick={() => lisaOstukorvi(element)}
-              >
-                lisa korvi
-              </Button>
+              <Button variant="outline-dark" onClick={() => lisaOstukorvi(element)}>lisa korvi</Button>
             </div>
           </div>
-        ))}
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
