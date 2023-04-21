@@ -32,3 +32,32 @@
         margin-left: 3px;
         
     }
+
+    .checkbox-wrapper {
+       height: 50px;
+       width: 20%;
+      
+    }
+
+    .kategooriad, .meistrid {
+        font-weight: bolder;
+        
+    }
+    @media (max-width: 650px) {
+        .product-wrapper-home {
+          width: fit-content;
+        }}
+
+        @media (max-width: 650px) {
+            .product-home {
+              width: 50%;
+              margin-left: -30%;
+            }}
+
+            
+            @media (max-width: 650px) {
+              .checkbox-wrapper   {
+                  font-size: smaller;
+                  text-align: end;
+                  
+                }}

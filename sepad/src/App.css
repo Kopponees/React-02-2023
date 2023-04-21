@@ -113,6 +113,7 @@ header {
   color: rgb(115, 114, 114);
   margin-left: 50px;
 }
+
 @media (max-width: 768px) {
   .form-group {
     width: 100%;
@@ -132,4 +133,81 @@ header {
 
 .sepadnuppepood {
   margin-right: 3px;
+}
+
+.meisttekst {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.meistpealkiri {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .ostukorvnupp {
+    margin-left: 48px;
+  }
+}
+
+.ajalugutekst {
+  margin-left: 20px;
+  margin-top: 20px;
+
+}
+
+.ajalugutekstmain,
+.ajalugupealkiri {
+  text-align: center;
+
+}
+
+.ajalugupealkiri {
+  margin-top: 20px;
+}
+
+.ajaluguaastadtekst {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+@media (max-width: 1050px) {
+  .map {
+    margin-left: 25%;
+    width: 70%;
+    margin-right: 0;
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 918px) {
+
+  .sepikojadnupud,
+  .kõiksepikojad {
+    width: 20%;
+  }
+}
+
+@media (max-width: 918px) {
+  .sepikojadnupud {
+    margin-top: 50px;
+    
+  }
+}
+
+@media (max-width: 557px) {
+  .map {
+    width: 50%;
+    margin-left: 140px;
+    height: 240px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 557px) {
+  .kõiksepikojad, .sepikojadnupud {
+   width: 120px
+  }
 }
