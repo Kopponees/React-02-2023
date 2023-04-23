@@ -211,3 +211,13 @@ header {
    width: 120px
   }
 }
+
+.carousel {
+ 
+}
+
+.d-block w-100 {
+  height: 500px;
+  width: 500px;
+  position: fixed;
+}
