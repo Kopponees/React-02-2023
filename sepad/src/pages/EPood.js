@@ -3,6 +3,8 @@ import KaubadFailist from '../data/kaubad.json';
 import "../css/Epood.css";
 import Button from 'react-bootstrap/Button';
 import Checkbox from '@mui/material/Checkbox';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function EPood() {
@@ -19,6 +21,8 @@ function EPood() {
       cartLS.push({ product: productClicked, quantity: 1 });
       localStorage.setItem("cart", JSON.stringify(cartLS));
     };
+    toast.success("Toode on lisatud ostukorvi!"
+    );
   }
 
   const categories = [...new Set(products.map(product => product.category))];
@@ -89,6 +93,7 @@ function EPood() {
           </div>
         )}
       </div>
+      <ToastContainer theme='dark' />
     </div>
   );
 }

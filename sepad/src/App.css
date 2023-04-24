@@ -105,13 +105,13 @@ header {
 .ostukorvnupp {
   width: 35px;
   height: 35px;
-  margin-left: 8px;
+  margin-left: 10px;
   margin-right: 32px;
 }
 
 .cartsum {
   color: rgb(115, 114, 114);
-  margin-left: 50px;
+  margin-left: 170px;
 }
 
 @media (max-width: 768px) {
@@ -193,7 +193,7 @@ header {
 @media (max-width: 918px) {
   .sepikojadnupud {
     margin-top: 50px;
-    
+
   }
 }
 
@@ -207,13 +207,11 @@ header {
 }
 
 @media (max-width: 557px) {
-  .kõiksepikojad, .sepikojadnupud {
-   width: 120px
-  }
-}
 
-.carousel {
- 
+  .kõiksepikojad,
+  .sepikojadnupud {
+    width: 120px
+  }
 }
 
 .d-block w-100 {
@@ -221,3 +219,47 @@ header {
   width: 500px;
   position: fixed;
 }
+
+.avalehttekst {
+  margin-bottom: 55%;
+  background-size: contain;
+  background-color: #1516179b;
+}
+
+@media (max-width: 940px) {
+  .avalehttekst {
+   margin-bottom: 40%;
+  }
+}
+
+@media (max-width: 705px) {
+  .avalehttekst {
+   margin-bottom: 30%;
+  }
+}
+
+@media (max-width: 594px) {
+  .avalehttekst {
+   margin-bottom: 20%;
+  }
+}
+
+@media (max-width: 460px) {
+  .avalehttekst {
+   margin-bottom: 10%;
+  }
+}
+
+@media (max-width: 420px) {
+  .avalehttekst {
+   margin-bottom: 0%;
+  }
+}
+@media (max-width: 420px) {
+ .d-block w-100{
+  height: 500px;
+  }
+}
+
+
+ 

@@ -8,7 +8,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import AstuLiikmeks from './pages/AstuLiikmeks';
 import EPood from './pages/EPood';
 import Meist from './pages/Meist';
-import Uudised from './pages/Uudised';
 import Sepikojad from './pages/Sepikojad';
 import Avaleht from './pages/Avaleht';
 import Kontakt from './pages/Kontakt';
@@ -54,7 +53,6 @@ function App() {
           <Nav>
             <Nav.Link className="avalehtnupp"href="/epood">{t("epood")}</Nav.Link>
             <Nav.Link className="avalehtnupp" href="/kontakt">{t("kontakt")}</Nav.Link>
-            <Nav.Link className="avalehtnupp" href="/uudised">{t("uudised")}</Nav.Link>
             <NavDropdown className="meistnupp"title={t("meist")} id="collasible-nav-dropdown"
             show={n2itaMeist}
             onMouseEnter={hiirPeal}
@@ -88,13 +86,11 @@ function App() {
         <Route path="kontakt" element={<Kontakt />} />
         <Route path="ostukorv" element={<Ostukorv />} />
         <Route path="meist" element={<Meist />} />
-        <Route path="uudised" element={<Uudised />} />
         <Route path="sepikojad" element={<Sepikojad />} />
         <Route path="astuliikmeks" element={<AstuLiikmeks />} />
         <Route path="meiesepad" element={<MeieSepad />} />
         <Route path="ajalugu" element={<Ajalugu />} />
       </Routes>
-
 
     </div>
   );
