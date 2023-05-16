@@ -40,22 +40,22 @@ function EPood() {
   return (
     <div>
       <div className="checkbox-wrapper">
-      <div>
-    <Checkbox
-      checked={!selectedCategory && !selectedBlacksmith}
-      onChange={() => {
-        setSelectedCategory(null);
-        setSelectedBlacksmith(null);
-      }}
-      label="Kõik"
-    />
-    <span>Kõik tooted</span>
-  </div>
+        <div>
+          <Checkbox
+            checked={!selectedCategory && !selectedBlacksmith}
+            onChange={() => {
+              setSelectedCategory(null);
+              setSelectedBlacksmith(null);
+            }}
+            label="Kõik"
+          />
+          <span>Kõik tooted</span>
+        </div>
         <div className="category-wrapper">
           <div className="kategooriad">Kategooriad:</div>
           {categories.map(category => (
             <div key={category}>
-              
+
               <Checkbox
                 checked={selectedCategory === category}
                 onChange={() => setSelectedCategory(selectedCategory === category ? null : category)}
@@ -65,7 +65,7 @@ function EPood() {
             </div>
           ))}
         </div>
-        
+
         <div className="blacksmith-wrapper">
           <div className="meistrid">Meistrid:</div>
           {blacksmiths.map(blacksmith => (

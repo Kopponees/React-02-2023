@@ -236,6 +236,9 @@ header {
   .avalehttekst {
    margin-bottom: 30%;
   }
+  .form-control {
+    width: 50% !important; 
+  }
 }
 
 @media (max-width: 594px) {
@@ -261,5 +264,7 @@ header {
   }
 }
 
-
+.carousel {
+  height: 300px;
+}
  

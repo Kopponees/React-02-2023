@@ -16,34 +16,34 @@ function Ostukorv() {
     }
     setCart(cart.slice());
     localStorage.setItem("cart", JSON.stringify(cart));
-  
+
 
   }
   const increaseQuantity = (index) => {
     cart[index].quantity = cart[index].quantity + 1;
     setCart(cart.slice());
     localStorage.setItem("cart", JSON.stringify(cart));
-    
+
   }
 
   const deleteProduct = (index) => {
     cart.splice(index, 1);
     setCart(cart.slice());
     localStorage.setItem("cart", JSON.stringify(cart));
-  
+
   }
 
   const empty = () => {
     setCart([]);
     localStorage.setItem("cart", JSON.stringify([]));
-  
+
   }
   const calculatetotalValue = () => {
     let totalValue = 0;
     cart.forEach(oneProduct => totalValue = totalValue + oneProduct.product.price * oneProduct.quantity);
     return totalValue.toFixed(2);
   }
-  
+
   return (
     <div>
       <div className="cart-top">
@@ -53,19 +53,19 @@ function Ostukorv() {
       </div>
 
       {cart.map((element, index) =>
-      <div className="product-wrapper">
-        <div className="product" key={index}>
-          <img className="image" src={element.product.image} alt="" />
-          <div className="name">{element.product.name}</div>
-          <div className="price">{element.product.price} €</div>
-          <div className="quantity">
-            <img className="button" onClick={() => decreaseQuantity(index)} src="minus.png" alt="" />
-            <div>{element.quantity}</div>
-            <img className="button" onClick={() => increaseQuantity(index)} src="add.png" alt="" />
+        <div className="product-wrapper">
+          <div className="product" key={index}>
+            <img className="image" src={element.product.image} alt="" />
+            <div className="name">{element.product.name}</div>
+            <div className="price">{element.product.price} €</div>
+            <div className="quantity">
+              <img className="button" onClick={() => decreaseQuantity(index)} src="minus.png" alt="" />
+              <div>{element.quantity}</div>
+              <img className="button" onClick={() => increaseQuantity(index)} src="add.png" alt="" />
+            </div>
+            <div className="sum">{(element.product.price * element.quantity).toFixed(2)} €</div>
+            <img className="button" onClick={() => deleteProduct(index)} src="trash.png" alt="" />
           </div>
-          <div className="sum">{(element.product.price * element.quantity).toFixed(2)} €</div>
-          <img className="button" onClick={() => deleteProduct(index)} src="trash.png" alt="" />
-      </div>
           <div className="mobile-row">
             <img className="button" onClick={() => decreaseQuantity(index)} src="minus.png" alt="" />
             <div>{element.quantity}</div>

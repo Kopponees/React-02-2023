@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Olav Surva",
+        "image": "olavsurva.JPG",
+        "profile":"Olen lahe sepp, graveerin ka" },
+    
+        {
+            "name": "Joonas Kiri",
+            "image": "https://folkart.ee/wp-content/uploads/2018/12/Joonas-Kiri-200x300.jpg",
+            "profile": "Olen lahe sepp ja õpetaja ka, selles ka päris lahe"
+        },
+        {
+            "name": "Peeter Reeman",
+            "image": "https://www.homofaber.com/uploads/cache/msmall/1636535551_3-c-marge-teder-15-jpg.jpeg",
+            "profile": "Olen sepp ja teen kirveid ja tegin laheda päkapiku ukse ka"
+        },
+        {
+            "name": "Ivar Feldmann",
+            "image": "https://live.staticflickr.com/4061/4675548289_892fbde07b_b.jpg",
+            "profile": "Olen sepp ja karjatan veiseid kah"
+        },
+        {
+            "name": "Kalle Kotselainen",
+            "image": "",
+            "profile": ""
+        }
+    ]
